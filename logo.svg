@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 196" role="img" aria-label="Impulso Emprendedor by Integro">
+  <!-- IMPULSO -->
+  <text x="0" y="90"
+    font-family="Impact, 'Arial Narrow', 'Helvetica Neue Condensed Bold', sans-serif"
+    font-weight="900" font-size="96" fill="#F9452E" letter-spacing="-3">IMPULSO</text>
+
+  <!-- Chart icon: rounded rectangle -->
+  <rect x="403" y="2" width="88" height="88" rx="13" ry="13"
+    fill="none" stroke="#F9452E" stroke-width="5.5"/>
+  <!-- Chart line -->
+  <polyline points="422,74 442,57 460,66 487,34"
+    fill="none" stroke="#F9452E" stroke-width="5"
+    stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head -->
+  <polygon points="481,25 494,34 482,44" fill="#F9452E"/>
+
+  <!-- EMPRENDEDOR -->
+  <text x="0" y="164"
+    font-family="Impact, 'Arial Narrow', 'Helvetica Neue Condensed Bold', sans-serif"
+    font-weight="900" font-size="78" fill="#313036" letter-spacing="-0.5">EMPRENDEDOR</text>
+
+  <!-- BY integro -->
+  <text x="178" y="190"
+    font-family="'Arial', Helvetica, sans-serif"
+    font-weight="700" font-size="20" fill="#313036">BY&#160;</text>
+  <text x="211" y="190"
+    font-family="'Arial', Helvetica, sans-serif"
+    font-weight="700" font-size="20" fill="#F9452E">i</text>
+  <text x="220" y="190"
+    font-family="'Arial', Helvetica, sans-serif"
+    font-weight="700" font-size="20" fill="#313036">ntegro</text>
+</svg>
