@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Impulso Emprendedor by Integro</title>
+<meta name="description" content="Artículos estratégicos para founders tech en México. Ventas B2B, Go-To-Market, estructura comercial y escala para startups SaaS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #F9452E;
+    --dark: #313036;
+    --off-white: #F7F6F4;
+    --cream: #F5F3F0;
+    --mid: #7A7880;
+    --border: rgba(49,48,54,0.12);
+    --border-strong: rgba(49,48,54,0.22);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--off-white);
+    color: var(--dark);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,246,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--dark);
+  }
+
+  .nav-logo img {
+    height: 32px;
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--dark);
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .nav-links a:hover { opacity: 1; }
+
+  .nav-links a.active {
+    opacity: 1;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--red);
+    border-radius: 2px;
+  }
+
+  .nav-cta {
+    background: var(--dark) !important;
+    color: var(--off-white) !important;
+    opacity: 1 !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--red) !important; }
+
+  /* ── HERO ── */
+  .blog-hero {
+    border-bottom: 0.5px solid var(--border);
+    padding: 5rem 2rem 4rem;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: var(--red);
+  }
+
+  .hero-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+    max-width: 700px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--red);
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    color: var(--mid);
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--mid);
+    margin-right: 0.5rem;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 0.5px solid var(--border-strong);
+    color: var(--dark);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 6px 14px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--dark);
+  }
+
+  .filter-btn.active {
+    background: var(--dark);
+    border-color: var(--dark);
+    color: white;
+    font-weight: 500;
+  }
+
+  /* ── FEATURED POST ── */
+  .featured-section {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 3rem 2rem 0;
+  }
+
+  .featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: white;
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+
+  .featured-card:hover {
+    box-shadow: 0 8px 40px rgba(49,48,54,0.1);
+  }
+
+  .featured-visual {
+    background: var(--dark);
+    min-height: 380px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem;
+    overflow: hidden;
+  }
+
+  .featured-visual::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(249,69,46,0.04) 40px,
+      rgba(249,69,46,0.04) 41px
+    );
+  }
+
+  .featured-visual-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 9rem;
+    line-height: 1;
+    color: rgba(249,69,46,0.15);
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    pointer-events: none;
+  }
+
+  .featured-badge {
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .featured-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .post-category {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.75rem;
+  }
+
+  .featured-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .featured-content p {
+    font-size: 15px;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .post-meta-item {
+    font-size: 12px;
+    color: var(--mid);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .read-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--dark);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 11px 22px;
+    border-radius: 8px;
+    align-self: flex-start;
+    transition: background 0.2s;
+  }
+
+  .read-btn:hover { background: var(--red); }
+
+  .read-btn svg { transition: transform 0.2s; }
+  .read-btn:hover svg { transform: translateX(3px); }
+
+  /* ── GRID ── */
+  .posts-section {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .post-card {
+    background: white;
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .post-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(49,48,54,0.08);
+  }
+
+  .card-visual {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-visual-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    line-height: 1;
+    opacity: 0.12;
+    color: white;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-category {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+
+  .card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+    flex: 1;
+  }
+
+  .card-excerpt {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .card-date {
+    font-size: 11px;
+    color: var(--mid);
+  }
+
+  .card-read {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--red);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* ── NEWSLETTER STRIP ── */
+  .newsletter-strip {
+    background: var(--dark);
+    padding: 4.5rem 2rem;
+  }
+
+  .newsletter-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .newsletter-text .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-text h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .newsletter-text p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 13px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .newsletter-form input::placeholder { color: rgba(255,255,255,0.35); }
+
+  .newsletter-form input:focus {
+    border-color: rgba(249,69,46,0.6);
+  }
+
+  .newsletter-submit {
+    background: var(--red);
+    border: none;
+    border-radius: 8px;
+    padding: 13px 24px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .newsletter-submit:hover { opacity: 0.88; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--off-white);
+    border-top: 0.5px solid var(--border);
+    padding: 2.5rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: var(--mid);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--dark); }
+
+  /* ── HIDDEN ARTICLES for modal ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(49,48,54,0.65);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: white;
+    border-radius: 16px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalIn 0.3s ease;
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal-header {
+    padding: 2.5rem 2.5rem 0;
+    position: sticky;
+    top: 0;
+    background: white;
+    border-bottom: 0.5px solid var(--border);
+    padding-bottom: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--cream);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+  }
+
+  .modal-body {
+    padding: 2rem 2.5rem 2.5rem;
+  }
+
+  .modal-body h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+  }
+
+  .modal-body .modal-meta {
+    font-size: 13px;
+    color: var(--mid);
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .modal-body p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+
+  .modal-body h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--dark);
+    margin: 1.75rem 0 0.6rem;
+  }
+
+  .modal-body ul {
+    padding-left: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal-body li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 0.35rem;
+  }
+
+  .modal-cta {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .modal-cta p {
+    font-size: 14px;
+    color: var(--mid);
+    margin: 0;
+  }
+
+  .modal-cta a {
+    background: var(--red);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+
+  .modal-cta a:hover { opacity: 0.88; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-visual { min-height: 220px; }
+    .posts-grid { grid-template-columns: repeat(2, 1fr); }
+    .newsletter-inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links li:nth-child(1), .nav-links li:nth-child(2) { display: none; }
+    .blog-hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero-title { font-size: 2rem; }
+    .featured-section, .posts-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .posts-grid { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .filter-bar { padding-left: 1.25rem; padding-right: 1.25rem; }
+  }
+
+  /* ── TAG COLORS ── */
+  .tag-ventas { background: #FFF0ED; color: #C73316; }
+  .tag-gtm { background: #F0F4FF; color: #2B52CC; }
+  .tag-ops { background: #F0FFF6; color: #1C7A48; }
+  .tag-saas { background: #FDF0FF; color: #822BA8; }
+  .tag-mindset { background: #FFFBF0; color: #9A6B00; }
+
+  .cv1 { background: #1E1C22; }
+  .cv2 { background: #2C1A17; }
+  .cv3 { background: #172433; }
+  .cv4 { background: #17291E; }
+  .cv5 { background: #251526; }
+  .cv6 { background: #1A2410; }
+  .cv7 { background: #251E0E; }
+  .cv8 { background: #24151A; }
+  .cv9 { background: #132030; }
+  .cv10 { background: #1C1A2C; }
+  .cv11 { background: #1F2416; }
+  .cv12 { background: #2A1510; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="https://www.impulsoemprendedor.com.mx/" class="nav-logo">
+    <img src="https://www.impulsoemprendedor.com.mx/logo.png" alt="Impulso Emprendedor by Integro">
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://www.impulsoemprendedor.com.mx/">Inicio</a></li>
+    <li><a href="https://www.impulsoemprendedor.com.mx/servicios">Servicios</a></li>
+    <li><a href="https://impulso-scorecard.vercel.app/">Impulso Score</a></li>
+    <li><a href="#" class="active">Blog</a></li>
+    <li><a href="https://www.impulsoemprendedor.com.mx/#contacto" class="nav-cta">Contáctanos</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="blog-hero">
+  <div class="hero-eyebrow">Blog Estratégico</div>
+  <h1 class="hero-title">Recursos para founders<br>que quieren <em>escalar</em>.</h1>
+  <p class="hero-subtitle">Artículos sobre ventas B2B, estructura comercial, Go-To-Market y sistemas de crecimiento para startups tech en México.</p>
+</section>
+
+<!-- ── FILTER BAR ── -->
+<div class="filter-bar">
+  <span class="filter-label">Tema</span>
+  <button class="filter-btn active" onclick="filterPosts('all', this)">Todos</button>
+  <button class="filter-btn" onclick="filterPosts('ventas', this)">Ventas B2B</button>
+  <button class="filter-btn" onclick="filterPosts('gtm', this)">Go-To-Market</button>
+  <button class="filter-btn" onclick="filterPosts('ops', this)">Operaciones</button>
+  <button class="filter-btn" onclick="filterPosts('saas', this)">SaaS</button>
+  <button class="filter-btn" onclick="filterPosts('mindset', this)">Mindset</button>
+</div>
+
+<!-- ── FEATURED ── -->
+<section class="featured-section">
+  <article class="featured-card" onclick="openPost(0)" style="cursor:pointer;">
+    <div class="featured-visual cv1">
+      <div class="featured-visual-number">01</div>
+      <span class="featured-badge">Más reciente</span>
+    </div>
+    <div class="featured-content">
+      <div class="post-category">Ventas B2B</div>
+      <h2>Por qué tu startup tiene producto pero no tiene ventas: el problema estructural que nadie te dice</h2>
+      <p>El 70% de las startups tech en México con producto validado no tiene un sistema de ventas. No es un problema de mercado. Es un problema de estructura comercial.</p>
+      <div class="post-meta">
+        <span class="post-meta-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          8 min de lectura
+        </span>
+        <span class="post-meta-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Enero 2025
+        </span>
+      </div>
+      <a class="read-btn" onclick="event.stopPropagation(); openPost(0)">
+        Leer artículo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </article>
+</section>
+
+<!-- ── GRID ── -->
+<section class="posts-section">
+  <div class="section-label">Todos los artículos</div>
+  <div class="posts-grid" id="postsGrid">
+    <!-- Cards injected by JS -->
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ── -->
+<section class="newsletter-strip">
+  <div class="newsletter-inner">
+    <div class="newsletter-text">
+      <div class="eyebrow">Viernes de Impulso</div>
+      <h3>Estrategia en tu inbox cada semana.</h3>
+      <p>Noticias tech, tendencias de mercado, una herramienta práctica y el reto de la semana para founders que operan en serio.</p>
+    </div>
+    <div class="newsletter-form">
+      <input type="text" placeholder="Tu nombre">
+      <input type="email" placeholder="tu@email.com">
+      <button class="newsletter-submit" onclick="handleSubscribe(this)">Suscribirme al newsletter →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 Impulso Emprendedor by Integro · Mexicali BC, México</span>
+    <ul class="footer-links">
+      <li><a href="https://www.impulsoemprendedor.com.mx/">Inicio</a></li>
+      <li><a href="https://www.impulsoemprendedor.com.mx/servicios">Servicios</a></li>
+      <li><a href="https://www.impulsoemprendedor.com.mx/#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+const posts = [
+  {
+    id: 0,
+    category: 'ventas',
+    categoryLabel: 'Ventas B2B',
+    tagClass: 'tag-ventas',
+    colorClass: 'cv1',
+    title: 'Por qué tu startup tiene producto pero no tiene ventas',
+    fullTitle: 'Por qué tu startup tiene producto pero no tiene ventas: el problema estructural que nadie te dice',
+    excerpt: 'El 70% de las startups tech en México con producto validado no tiene un sistema de ventas. No es un problema de mercado.',
+    date: 'Enero 2025',
+    read: '8 min',
+    featured: true,
+    content: `
+      <p>Si tienes un producto que funciona, clientes que lo usan y aún así las ventas no despegan, tienes un problema de estructura, no de producto.</p>
+      <p>Esto es más común de lo que parece. En México, el 70% de las startups tech con producto validado no cuenta con un sistema de ventas real. Tienen un fundador haciendo demo tras demo, cerrando por relaciones personales, sin pipeline visible ni forecast posible.</p>
+      <h2>El síntoma vs. el diagnóstico</h2>
+      <p>El síntoma es "no hay ventas". El diagnóstico real puede ser cualquiera de estos:</p>
+      <ul>
+        <li>No hay un ICP definido con claridad: le están vendiendo a todos y a nadie.</li>
+        <li>No hay proceso de prospección: las oportunidades llegan por referido o suerte.</li>
+        <li>No hay seguimiento estructurado: leads que entran frío y se enfrían más.</li>
+        <li>No hay narrativa comercial: cada demo es diferente según el humor del día.</li>
+        <li>No hay CRM real: el pipeline vive en la cabeza del founder.</li>
+      </ul>
+      <h2>Por qué los founders técnicos caen en esto</h2>
+      <p>El perfil CTO-founder que construye producto excepcional raramente tiene entrenamiento comercial. La lógica de producto es iterativa, orientada a features. La lógica comercial es sistémica, orientada a conversión. Son músculos diferentes.</p>
+      <p>Y aquí está la trampa: el founder técnico asume que si el producto es bueno, las ventas llegarán solas. En los primeros clientes, eso es parcialmente verdad. Pero para escalar, necesitas sistema, no suerte.</p>
+      <h2>Qué hace diferente a una startup con estructura comercial</h2>
+      <p>Una startup con estructura comercial real tiene: un ICP documentado, un proceso de prospección activo, una narrativa comercial consistente, un CRM con stages claros y un número de pipeline que puede defenderle ante un inversionista.</p>
+      <p>Eso no lo construyes en un día, pero tampoco tarda años. Con el framework correcto, las primeras 8 semanas son suficientes para tener los cimientos.</p>
+    `
+  },
+  {
+    id: 1,
+    category: 'gtm',
+    categoryLabel: 'Go-To-Market',
+    tagClass: 'tag-gtm',
+    colorClass: 'cv2',
+    title: 'Cómo construir tu estrategia Go-To-Market desde cero',
+    fullTitle: 'Cómo construir tu estrategia Go-To-Market desde cero: guía para founders SaaS en México',
+    excerpt: 'GTM no es un deck. Es un sistema operativo que define cómo llegas al mercado, cómo adquieres clientes y cómo escalas sin romper el negocio.',
+    date: 'Enero 2025',
+    read: '10 min',
+    content: `
+      <p>Go-To-Market es una de las frases más usadas y peor ejecutadas del ecosistema startup. La mayoría de los founders la entiende como "la estrategia de lanzamiento". En realidad, GTM es mucho más: es el sistema completo que define cómo tu empresa llega al mercado, adquiere clientes y escala.</p>
+      <h2>Los 5 componentes de un GTM real</h2>
+      <ul>
+        <li><strong>ICP (Ideal Customer Profile):</strong> quién es exactamente el cliente que más valor recibe y más rápido paga.</li>
+        <li><strong>Propuesta de valor única:</strong> qué problema resuelves, para quién y por qué mejor que la alternativa.</li>
+        <li><strong>Canales de adquisición:</strong> cómo llegas a ese ICP de forma predecible y escalable.</li>
+        <li><strong>Modelo de precios:</strong> cómo capturas valor en función del problema que resuelves.</li>
+        <li><strong>Motion de ventas:</strong> el proceso desde el primer contacto hasta el closed-won.</li>
+      </ul>
+      <h2>El error más común: lanzar sin ICP definido</h2>
+      <p>Cuando no tienes un ICP claro, tu GTM se convierte en "le vendemos a cualquier empresa que nos compre". Eso funciona para sobrevivir los primeros meses. Para escalar, es un desastre: el churn sube, el CAC también, y el equipo de ventas no sabe a quién llamar.</p>
+      <h2>Por dónde empezar si tienes 0 clientes</h2>
+      <p>Empieza con hipótesis. Documenta tu ICP hipotético: industria, tamaño de empresa, rol del decisor, problema principal, presupuesto estimado. Luego sal a validar esas hipótesis con 15–20 conversaciones de descubrimiento antes de optimizar cualquier otro elemento del GTM.</p>
+    `
+  },
+  {
+    id: 2,
+    category: 'ventas',
+    categoryLabel: 'Ventas B2B',
+    tagClass: 'tag-ventas',
+    colorClass: 'cv3',
+    title: 'ICP: el documento que toda startup necesita antes de vender',
+    fullTitle: 'ICP: el documento que toda startup necesita antes de intentar vender',
+    excerpt: 'Sin un Ideal Customer Profile documentado, tu equipo de ventas está disparando al aire. Aquí cómo construirlo desde datos reales.',
+    date: 'Febrero 2025',
+    read: '7 min',
+    content: `
+      <p>El ICP (Ideal Customer Profile) es el documento más importante que puede tener una startup antes de lanzar cualquier esfuerzo de ventas o marketing. Y es, también, el más ignorado.</p>
+      <h2>¿Qué es realmente un ICP?</h2>
+      <p>No es un "buyer persona" con nombre ficticio y foto de stock. El ICP es una descripción precisa del tipo de empresa que más valor recibe de tu producto, que tiene mayor propensión a comprar, que tiene menor costo de adquisición y que tiene mayor probabilidad de retención.</p>
+      <h2>Las variables que debe incluir tu ICP</h2>
+      <ul>
+        <li>Industria o vertical específica</li>
+        <li>Tamaño de empresa (empleados y/o revenue)</li>
+        <li>Madurez tecnológica</li>
+        <li>Rol del decisor de compra</li>
+        <li>Dolor principal que experimenta</li>
+        <li>Señales de trigger de compra</li>
+        <li>Presupuesto promedio disponible</li>
+        <li>Ciclo de compra típico</li>
+      </ul>
+      <h2>Cómo construirlo si eres early-stage</h2>
+      <p>Si ya tienes 3–5 clientes, analiza patrones: ¿qué tienen en común los que más usan el producto? ¿Los que pagaron más rápido? ¿Los que referenciaron a otro cliente? Esos son tus clientes estrella, y de ahí salen las variables de tu ICP.</p>
+      <p>Si aún no tienes clientes, construye el ICP como hipótesis y ve a validarlo con conversaciones. 15 entrevistas de descubrimiento te darán más claridad que cualquier framework teórico.</p>
+    `
+  },
+  {
+    id: 3,
+    category: 'ops',
+    categoryLabel: 'Operaciones',
+    tagClass: 'tag-ops',
+    colorClass: 'cv4',
+    title: 'Cómo estructurar tu CRM cuando eres un equipo de 1 o 2 personas',
+    fullTitle: 'Cómo estructurar tu CRM cuando eres un equipo de 1 o 2 personas: lo mínimo viable que sí funciona',
+    excerpt: 'Un CRM no es solo un software. Es la arquitectura de tu proceso comercial. Te mostramos cómo configurarlo para no perderte en la operación.',
+    date: 'Febrero 2025',
+    read: '6 min',
+    content: `
+      <p>El error más común cuando un founder configura su CRM: copiar la estructura de una empresa grande que no se parece en nada a su realidad operativa.</p>
+      <h2>Los 5 stages que necesita tu pipeline</h2>
+      <ul>
+        <li><strong>Lead:</strong> contacto identificado dentro de tu ICP, sin contacto aún.</li>
+        <li><strong>Contactado:</strong> primer alcance enviado, esperando respuesta.</li>
+        <li><strong>Calificado:</strong> hubo conversación y confirmó que hay problema y presupuesto.</li>
+        <li><strong>Propuesta:</strong> enviaste pricing o propuesta formal.</li>
+        <li><strong>Closed (Won / Lost):</strong> decisión tomada.</li>
+      </ul>
+      <h2>Qué no incluir en tu CRM de early stage</h2>
+      <p>Omite campos que no vas a llenar. Cada campo vacío es deuda cognitiva. Empieza con empresa, contacto, stage, próxima acción y fecha. Eso es suficiente para los primeros 50 deals.</p>
+      <h2>La regla de las 24 horas</h2>
+      <p>Cualquier interacción con un prospecto debe quedar registrada en el CRM en menos de 24 horas. Si no lo registras, no existe. Y si no existe, no puedes optimizar.</p>
+    `
+  },
+  {
+    id: 4,
+    category: 'saas',
+    categoryLabel: 'SaaS',
+    tagClass: 'tag-saas',
+    colorClass: 'cv5',
+    title: 'Métricas SaaS que todo founder debe conocer antes de hablar con un inversionista',
+    fullTitle: 'Las métricas SaaS que todo founder debe conocer antes de hablar con un inversionista',
+    excerpt: 'MRR, ARR, CAC, LTV, Churn, NRR. No son acrónimos de moda: son el lenguaje con el que vas a defender tu negocio.',
+    date: 'Marzo 2025',
+    read: '9 min',
+    content: `
+      <p>Cuando entras a una sala con un inversionista y no sabes tu CAC:LTV, el meeting termina antes de empezar. No porque eres malo en tu negocio, sino porque no hablas el idioma.</p>
+      <h2>Las 6 métricas que no pueden faltarte</h2>
+      <ul>
+        <li><strong>MRR (Monthly Recurring Revenue):</strong> el ingreso recurrente mensual. Es el pulso de tu negocio.</li>
+        <li><strong>ARR (Annual Recurring Revenue):</strong> MRR × 12. Útil para conversaciones de fundraising.</li>
+        <li><strong>CAC (Customer Acquisition Cost):</strong> cuánto te cuesta adquirir un nuevo cliente. Incluye ventas, marketing y tiempo del founder.</li>
+        <li><strong>LTV (Lifetime Value):</strong> cuánto revenue genera un cliente durante toda su relación contigo.</li>
+        <li><strong>Churn Rate:</strong> el porcentaje de clientes o revenue que pierdes cada mes. Un SaaS saludable tiene menos del 2% mensual.</li>
+        <li><strong>NRR (Net Revenue Retention):</strong> mide si tus clientes actuales gastan más o menos con el tiempo. Por encima del 100% es señal de expansion revenue.</li>
+      </ul>
+      <h2>La relación más importante: CAC:LTV</h2>
+      <p>La regla general es que el LTV debe ser al menos 3 veces el CAC. Si el LTV:CAC es menor a 3:1, tu negocio está adquiriendo clientes a pérdida o en el límite del break-even.</p>
+    `
+  },
+  {
+    id: 5,
+    category: 'ventas',
+    categoryLabel: 'Ventas B2B',
+    tagClass: 'tag-ventas',
+    colorClass: 'cv6',
+    title: 'Cómo hacer outreach en LinkedIn sin sonar a spam',
+    fullTitle: 'Cómo hacer outreach en LinkedIn sin sonar a spam: el framework que usamos con startups tech',
+    excerpt: 'El 90% de los mensajes de prospección en LinkedIn son ignorados. No porque el canal no funcione, sino porque el mensaje está mal construido.',
+    date: 'Marzo 2025',
+    read: '7 min',
+    content: `
+      <p>LinkedIn es el canal de adquisición B2B más eficiente para startups tech en México en este momento. Pero el 90% de los mensajes que se envían son ignorados. El problema no es el canal: es el mensaje.</p>
+      <h2>Los 3 errores que destruyen tu tasa de respuesta</h2>
+      <ul>
+        <li>Empezar con "Hola, soy de [empresa] y ofrecemos [servicio]..." — nadie le importa tu empresa antes de saber qué ganan ellos.</li>
+        <li>Mensajes genéricos sin personalización visible — el prospecto sabe que es copy-paste.</li>
+        <li>Pedir una reunión en el primer mensaje — es el equivalente a pedir matrimonio en la primera cita.</li>
+      </ul>
+      <h2>El framework VAPA para mensajes de outreach</h2>
+      <ul>
+        <li><strong>V — Valor específico:</strong> Menciona algo concreto del perfil del prospecto que muestre que lo investigaste.</li>
+        <li><strong>A — Ángulo relevante:</strong> Conecta ese detalle con el problema que resuelves.</li>
+        <li><strong>P — Prueba:</strong> Un dato, caso de éxito o resultado que valide tu credibilidad.</li>
+        <li><strong>A — Acción mínima:</strong> Pide algo pequeño, no una reunión. Una respuesta de sí/no.</li>
+      </ul>
+      <h2>Un ejemplo que convierte</h2>
+      <p>"Vi que [empresa] está expandiendo su equipo de ventas en LinkedIn. Trabajamos con 3 startups SaaS en etapa similar y en promedio redujeron su ciclo de ventas en 40% en 60 días. ¿Tiene sentido conectar brevemente para ver si aplica a su caso?"</p>
+    `
+  },
+  {
+    id: 6,
+    category: 'gtm',
+    categoryLabel: 'Go-To-Market',
+    tagClass: 'tag-gtm',
+    colorClass: 'cv7',
+    title: 'Pricing para SaaS en México: cómo fijar el precio sin subestimarte',
+    fullTitle: 'Pricing para SaaS en México: cómo fijar el precio sin subestimarte ni perder deals',
+    excerpt: 'El precio no es solo un número. Es un posicionamiento. La mayoría de los founders tech en México cobran menos de lo que deberían.',
+    date: 'Abril 2025',
+    read: '8 min',
+    content: `
+      <p>El pricing es una de las decisiones más importantes y más improvisadas en el journey de una startup. La mayoría de los founders en México eligen precio por intuición, miedo o por copiar al competidor más cercano.</p>
+      <h2>Por qué el miedo al precio destruye tu negocio</h2>
+      <p>Cuando cobras poco por miedo al rechazo, envías señales negativas al mercado: que tu producto no vale lo que dices que vale, que no confías en el problema que resuelves y que cualquiera con un Excel puede reemplazarte.</p>
+      <h2>Los 3 modelos de pricing para SaaS</h2>
+      <ul>
+        <li><strong>Por usuario/seat:</strong> simple y predecible. Funciona bien cuando el valor crece con el número de usuarios.</li>
+        <li><strong>Por uso (usage-based):</strong> el cliente paga en función de lo que consume. Reduce la barrera de entrada pero puede hacer el revenue menos predecible.</li>
+        <li><strong>Por valor/outcome:</strong> el precio está ligado al resultado que obtienes. Es el más poderoso y el más difícil de implementar.</li>
+      </ul>
+      <h2>Cómo saber si estás dejando dinero en la mesa</h2>
+      <p>Si en tus demos nadie pregunta por el precio y todos dicen que sí en el primer intento, probablemente estás cobrando poco. Una tasa de rechazo del 20–30% por precio es señal de que el pricing está calibrado correctamente.</p>
+    `
+  },
+  {
+    id: 7,
+    category: 'mindset',
+    categoryLabel: 'Mindset',
+    tagClass: 'tag-mindset',
+    colorClass: 'cv8',
+    title: 'El síndrome del fundador todólogo y cómo salir de él',
+    fullTitle: 'El síndrome del fundador todólogo: por qué hacer todo tú mismo frena tu crecimiento',
+    excerpt: 'Ser el CEO, CTO, vendedor, diseñador y soporte al mismo tiempo no es señal de dedicación. Es señal de que no tienes estructura.',
+    date: 'Abril 2025',
+    read: '6 min',
+    content: `
+      <p>Si eres el fundador de una startup y eres responsable de ventas, producto, operaciones, soporte y finanzas al mismo tiempo, tienes un problema de estructura, no de tiempo.</p>
+      <h2>Por qué el todólogo es un cuello de botella</h2>
+      <p>Cuando todo pasa por ti, el crecimiento tiene un techo: tu capacidad de procesar. Eso no escala. Y lo peor: cuando estás apagando incendios operativos, no tienes tiempo para hacer lo que solo tú puedes hacer: visión, relaciones estratégicas y decisiones críticas.</p>
+      <h2>Las 3 áreas que debes delegar primero</h2>
+      <ul>
+        <li><strong>Soporte reactivo:</strong> responder tickets, dudas básicas de clientes. Esto puede ser automatizado o delegado en semanas.</li>
+        <li><strong>Administración operativa:</strong> facturas, reportes, agenda. El ROI de delegar esto es inmediato.</li>
+        <li><strong>Prospección outbound:</strong> el founder debe cerrar deals, no prospectar manualmente en LinkedIn 8 horas al día.</li>
+      </ul>
+      <h2>Cuándo saber que ya no eres el cuello de botella</h2>
+      <p>Cuando puedes desaparecer una semana y el negocio no para. Ese es el objetivo de tener estructura: que la operación funcione sin depender de tu presencia constante.</p>
+    `
+  },
+  {
+    id: 8,
+    category: 'ops',
+    categoryLabel: 'Operaciones',
+    tagClass: 'tag-ops',
+    colorClass: 'cv9',
+    title: 'SOPs para startups: cómo documentar tu operación sin morir en el intento',
+    fullTitle: 'SOPs para startups: cómo documentar tu operación sin morir en el intento',
+    excerpt: 'Los Procedimientos Operativos Estándar no son burocracia corporativa. Son la diferencia entre un negocio que depende de ti y uno que puede escalar.',
+    date: 'Mayo 2025',
+    read: '7 min',
+    content: `
+      <p>La palabra "procedimiento" asusta a los founders. Suena a corporativo, lento y burocrático. Pero un SOP bien construido es exactamente lo opuesto: es libertad operativa.</p>
+      <h2>¿Qué es un SOP y por qué lo necesitas?</h2>
+      <p>Un SOP (Standard Operating Procedure) es simplemente una descripción paso a paso de cómo se ejecuta un proceso en tu empresa. Puede ser tan simple como "cómo onboardear un nuevo cliente" o tan complejo como "cómo ejecutar una campaña de outreach".</p>
+      <h2>Los 5 SOPs que toda startup debe tener primero</h2>
+      <ul>
+        <li>SOP 01 — Proceso de Ventas y Cierre</li>
+        <li>SOP 02 — Onboarding de Nuevos Clientes</li>
+        <li>SOP 03 — Entrega del Servicio / Producto</li>
+        <li>SOP 04 — Seguimiento y Retención</li>
+        <li>SOP 05 — Operaciones Internas y Reportes</li>
+      </ul>
+      <h2>El formato que funciona</h2>
+      <p>No necesitas un documento de 30 páginas. Un SOP efectivo tiene: objetivo del proceso, quién es responsable, pasos numerados con detalle suficiente para que alguien nuevo lo ejecute, herramientas usadas y métricas de éxito. Eso es todo.</p>
+    `
+  },
+  {
+    id: 9,
+    category: 'saas',
+    categoryLabel: 'SaaS',
+    tagClass: 'tag-saas',
+    colorClass: 'cv10',
+    title: 'Demand Generation para SaaS B2B: qué funciona en México en 2025',
+    fullTitle: 'Demand Generation para SaaS B2B: qué canales realmente funcionan en México en 2025',
+    excerpt: 'Antes de invertir en paid ads, necesitas entender cuál es el canal de adquisición correcto para tu etapa, tu ICP y tu presupuesto.',
+    date: 'Mayo 2025',
+    read: '9 min',
+    content: `
+      <p>Demand generation no es solo publicidad. Es el conjunto de actividades que crean conciencia y demanda para tu producto en el mercado. Y en México B2B, hay canales que funcionan y canales que queman presupuesto.</p>
+      <h2>El mapa de canales por etapa</h2>
+      <ul>
+        <li><strong>0–10 clientes (Pre-PMF):</strong> Outreach directo en LinkedIn, red de contactos, referidos. Nada más.</li>
+        <li><strong>10–50 clientes (Early Growth):</strong> Contenido orgánico en LinkedIn, outreach estructurado, partnerships estratégicos.</li>
+        <li><strong>50+ clientes (Scale):</strong> Paid ads, SEO, eventos de industria, inbound con contenido.</li>
+      </ul>
+      <h2>Por qué los paid ads matan a las startups early-stage</h2>
+      <p>Si arrancas con paid ads antes de tener un proceso de ventas estructurado, estás comprando leads que no sabes cerrar. El CAC se dispara, el equipo se frustra y el presupuesto desaparece sin resultados visibles.</p>
+      <h2>El canal más subestimado en México: LinkedIn outbound</h2>
+      <p>Para B2B SaaS dirigido a empresas de 10–200 empleados en México, el LinkedIn outbound estructurado sigue siendo el canal con mejor ROI para etapas tempranas. No porque sea mágico, sino porque permite hiperpersonalización y control del ICP.</p>
+    `
+  },
+  {
+    id: 10,
+    category: 'gtm',
+    categoryLabel: 'Go-To-Market',
+    tagClass: 'tag-gtm',
+    colorClass: 'cv11',
+    title: 'Cómo escribir una propuesta comercial que cierra deals',
+    fullTitle: 'Cómo escribir una propuesta comercial que cierra deals: estructura y errores comunes',
+    excerpt: 'Una propuesta comercial no es un menú de precios. Es el documento donde transformas la conversación en compromiso.',
+    date: 'Junio 2025',
+    read: '6 min',
+    content: `
+      <p>La mayoría de las propuestas comerciales de startups parecen más un listado de features que un documento de ventas. El resultado: prospectos confundidos, decisiones postergadas y deals perdidos.</p>
+      <h2>La estructura que funciona</h2>
+      <ul>
+        <li><strong>Diagnóstico:</strong> Refleja el problema del cliente con sus propias palabras. Demuestra que entendiste.</li>
+        <li><strong>Solución propuesta:</strong> Describe qué vas a hacer específicamente, no solo qué ofreces.</li>
+        <li><strong>Resultados esperados:</strong> Qué cambia para ellos. Cuantificable si es posible.</li>
+        <li><strong>Inversión:</strong> Precio claro, sin ambigüedades. Si hay opciones, máximo 3.</li>
+        <li><strong>Próximos pasos:</strong> Qué pasa si dicen sí. Elimina la fricción de la decisión.</li>
+      </ul>
+      <h2>El error más común: enviar la propuesta sin contexto</h2>
+      <p>Una propuesta enviada por email sin una llamada de presentación tiene una tasa de cierre 60–70% menor que una presentada en persona o en video. Si mandas un PDF y esperas, estás dejando el deal al azar.</p>
+    `
+  },
+  {
+    id: 11,
+    category: 'mindset',
+    categoryLabel: 'Mindset',
+    tagClass: 'tag-mindset',
+    colorClass: 'cv12',
+    title: 'Revenue predecible: el objetivo real de cualquier startup que quiere escalar',
+    fullTitle: 'Revenue predecible: por qué es el objetivo real de cualquier startup que quiere escalar',
+    excerpt: 'El MRR inconsistente no es una etapa temporal. Es una señal de que tu sistema comercial tiene huecos que se irán haciendo más grandes.',
+    date: 'Junio 2025',
+    read: '7 min',
+    content: `
+      <p>Hay startups que cierran 3 deals en enero, 0 en febrero, 5 en marzo y 1 en abril. Eso no es crecimiento. Es caos con momentos de suerte. Y esa inconsistencia tiene un costo: es imposible planear, contratar, invertir o levantar capital cuando no sabes qué va a pasar el próximo mes.</p>
+      <h2>Qué hace predecible al revenue</h2>
+      <p>El revenue predecible no viene de trabajar más horas. Viene de tener un sistema donde cada input genera outputs calculables. Eso significa:</p>
+      <ul>
+        <li>Sabes cuántos leads entran al pipeline por semana.</li>
+        <li>Sabes qué porcentaje de esos leads se convierten en calificados.</li>
+        <li>Sabes cuánto tiempo tarda en cerrar un deal.</li>
+        <li>Sabes cuál es tu ticket promedio.</li>
+      </ul>
+      <h2>El forecast simple que todo founder puede hacer</h2>
+      <p>Con esas 4 variables puedes construir un forecast básico: si tienes 20 leads en pipeline, conviertes el 25% y el ticket promedio es $5,000, tu cierre esperado de este mes es $25,000. No es exacto, pero es un número que puedes defender y mejorar.</p>
+      <h2>El sistema como ventaja competitiva</h2>
+      <p>Cuando tienes revenue predecible, puedes contratar con confianza, hacer compromisos con clientes y tomar decisiones de producto basadas en datos, no en intuición. Ese es el salto de improvising a operating.</p>
+    `
+  }
+];
+
+function renderCards(filter = 'all') {
+  const grid = document.getElementById('postsGrid');
+  const filtered = filter === 'all' ? posts : posts.filter(p => p.category === filter);
+  grid.innerHTML = filtered.map(p => `
+    <article class="post-card" onclick="openPost(${p.id})" data-cat="${p.category}">
+      <div class="card-visual ${p.colorClass}">
+        <span class="card-visual-num">${String(p.id + 1).padStart(2,'0')}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category">${p.categoryLabel}</div>
+        <h3 class="card-title">${p.title}</h3>
+        <p class="card-excerpt">${p.excerpt}</p>
+        <div class="card-footer">
+          <span class="card-date">${p.date}</span>
+          <span class="card-read">Leer →</span>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+function filterPosts(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards(cat);
+}
+
+function openPost(id) {
+  const p = posts[id];
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <span class="post-category">${p.categoryLabel}</span>
+    </div>
+    <div class="modal-body">
+      <h1>${p.fullTitle}</h1>
+      <div class="modal-meta">${p.date} · ${p.read} de lectura · Impulso Emprendedor by Integro</div>
+      ${p.content}
+      <div class="modal-cta">
+        <p>¿Tu startup necesita estructura comercial? Podemos ayudarte.</p>
+        <a href="https://www.impulsoemprendedor.com.mx/#contacto" target="_blank">Agendar conversación →</a>
+      </div>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function handleSubscribe(btn) {
+  btn.textContent = '¡Suscrito! Te escribimos el próximo viernes.';
+  btn.style.background = '#1C7A48';
+  btn.disabled = true;
+}
+
+renderCards();
+</script>
+</body>
+</html>
