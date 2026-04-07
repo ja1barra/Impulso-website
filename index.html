@@ -7,7 +7,7 @@
   <meta name="description" content="Donde las startups tech en Mexico dejan de improvisar y empiezan a escalar. Estructura, Ventas y Go-To-Market para founders tech." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
       --red: #F9452E;
@@ -24,7 +24,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Proza Libre', sans-serif;
       background: var(--white);
       color: var(--dark);
       font-size: 17px;
@@ -48,36 +48,13 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
     }
 
-    .nav-logo-mark {
-      width: 38px;
-      height: 38px;
-      background: var(--red);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-logo-mark svg { width: 22px; height: 22px; }
-
-    .nav-logo-text {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1.2;
-    }
-
-    .nav-logo-text span {
+    .nav-logo img {
+      height: 48px;
+      width: auto;
       display: block;
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--gray-mid);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
     }
 
     .nav-links {
@@ -531,6 +508,41 @@
       color: var(--red);
     }
 
+    /* ── IMPULSO OS BADGE ── */
+    .impulso-os-badge {
+      margin: 40px 0 48px;
+      background: rgba(249,69,46,0.08);
+      border: 1px solid rgba(249,69,46,0.25);
+      border-left: 4px solid var(--red);
+      border-radius: 12px;
+      padding: 32px 36px;
+    }
+
+    .impulso-os-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .impulso-os-title {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .impulso-os-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+      max-width: 700px;
+    }
+
     /* ── FRAMEWORK ── */
     .framework {
       background: var(--dark);
@@ -850,7 +862,7 @@
       padding: 12px 16px;
       border: 1.5px solid var(--gray-light);
       border-radius: 8px;
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Proza Libre', sans-serif;
       font-size: 15px;
       color: var(--dark);
       background: var(--white);
@@ -933,35 +945,12 @@
     .footer-logo-row {
       display: flex;
       align-items: center;
-      gap: 10px;
     }
 
-    .footer-logo-mark {
-      width: 32px;
-      height: 32px;
-      background: var(--red);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .footer-logo-mark svg { width: 18px; height: 18px; }
-
-    .footer-logo-text {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.2;
-    }
-
-    .footer-logo-text span {
+    .footer-logo-row img {
+      height: 38px;
+      width: auto;
       display: block;
-      font-size: 10.5px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
     }
 
     /* ── RESPONSIVE ── */
@@ -1005,15 +994,7 @@
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
-      <div class="nav-logo-mark">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="white"/>
-        </svg>
-      </div>
-      <div class="nav-logo-text">
-        Impulso Emprendedor
-        <span>by Integro</span>
-      </div>
+      <img src="/logo.png" alt="Impulso Emprendedor by Integro" />
     </a>
 
     <ul class="nav-links">
@@ -1145,26 +1126,33 @@
         <p class="section-lead">Nuestro framework se basa en 4 pilares:</p>
       </div>
 
+      <!-- IMPULSO OS badge -->
+      <div class="impulso-os-badge fade-up" style="transition-delay:0.08s;">
+        <span class="impulso-os-tag">Framework propietario</span>
+        <h3 class="impulso-os-title">IMPULSO OS™</h3>
+        <p class="impulso-os-desc">El sistema operativo comercial que usamos en cada engagement. Un framework de 4 capas diseñado para llevar a una startup tech desde la improvisación hasta una operación comercial predecible, escalable y medible.</p>
+      </div>
+
       <div class="pillars-grid">
         <div class="pillar-card fade-up" style="transition-delay:0.05s;">
-          <div class="pillar-num">Pilar 01</div>
-          <h3>Claridad Estratégica</h3>
-          <p>Definimos ICP, propuesta de valor, pricing, posicionamiento y narrativa comercial.</p>
+          <div class="pillar-num">Capa 01</div>
+          <h3>Claridad</h3>
+          <p>Definimos ICP, propuesta de valor, pricing, posicionamiento y narrativa comercial. Sin claridad, no hay sistema.</p>
         </div>
         <div class="pillar-card fade-up" style="transition-delay:0.12s;">
-          <div class="pillar-num">Pilar 02</div>
-          <h3>Arquitectura Comercial</h3>
-          <p>Diseñamos procesos de prospección, seguimiento, cierre y expansión.</p>
+          <div class="pillar-num">Capa 02</div>
+          <h3>Estructura</h3>
+          <p>Diseñamos la arquitectura comercial: procesos de prospección, seguimiento, cierre y expansión. El esqueleto de tu operación.</p>
         </div>
         <div class="pillar-card fade-up" style="transition-delay:0.19s;">
-          <div class="pillar-num">Pilar 03</div>
-          <h3>Demand Generation</h3>
-          <p>Construimos motores reales de generación de oportunidades.</p>
+          <div class="pillar-num">Capa 03</div>
+          <h3>Ejecución</h3>
+          <p>Activamos los motores de demand generation y go-to-market. Convertimos la estrategia en pipeline real.</p>
         </div>
         <div class="pillar-card fade-up" style="transition-delay:0.26s;">
-          <div class="pillar-num">Pilar 04</div>
-          <h3>Operación & Métricas</h3>
-          <p>KPIs, CRM estructurado, forecast y accountability.</p>
+          <div class="pillar-num">Capa 04</div>
+          <h3>Optimización</h3>
+          <p>KPIs, CRM estructurado, forecast y accountability. Iteramos con datos para que el crecimiento sea sostenible.</p>
         </div>
       </div>
     </div>
@@ -1318,15 +1306,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo-row">
-            <div class="footer-logo-mark">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="white"/>
-              </svg>
-            </div>
-            <div class="footer-logo-text">
-              Impulso Emprendedor
-              <span>by Integro</span>
-            </div>
+            <img src="/logo.png" alt="Impulso Emprendedor by Integro" />
           </div>
           <p>Estructura ejecutiva para founders tech. Convertimos ideas en sistemas comerciales reales que generan revenue predecible.</p>
         </div>
