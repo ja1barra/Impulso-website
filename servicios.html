@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios | Impulso Emprendedor</title>
+  <meta name="description" content="Conoce nuestros servicios: Impulso Lite, Startup, Tech Pro, Escala y Aceleradora. Estructura comercial para startups tech en México." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #F9452E;
+      --dark: #313036;
+      --off-white: #F7F6F4;
+      --light-bg: #F5F3F0;
+      --white: #ffffff;
+      --gray-mid: #6B6A70;
+      --gray-light: #DDDBD8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 38px;
+      height: 38px;
+      background: var(--red);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-mark svg { width: 22px; height: 22px; }
+
+    .nav-logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .nav-logo-text span {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--gray-mid);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--dark);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 20px 5%;
+      z-index: 99;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--dark);
+      color: var(--white);
+      padding: 80px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 400px; height: 400px;
+      background: var(--red);
+      border-radius: 50%;
+      opacity: 0.05;
+    }
+
+    .page-header-inner {
+      max-width: 720px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(249,69,46,0.9);
+      margin-bottom: 16px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .page-header p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+    }
+
+    /* SERVICES */
+    .services-section {
+      padding: 80px 5%;
+      background: var(--white);
+    }
+
+    .services-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      padding: 52px 0;
+      border-bottom: 1px solid var(--gray-light);
+      align-items: start;
+    }
+
+    .service-card:last-child { border-bottom: none; }
+
+    .service-tier {
+      position: relative;
+    }
+
+    .service-tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--light-bg);
+      border: 1px solid var(--gray-light);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .service-tier-badge.featured {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--white);
+    }
+
+    .service-content h2 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .service-ideal {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--red);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .service-ideal::before {
+      content: '●';
+      font-size: 8px;
+    }
+
+    .service-content p {
+      font-size: 15.5px;
+      color: var(--gray-mid);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(249,69,46,0.35);
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--dark);
+      color: var(--white);
+      padding: 80px 5%;
+      text-align: center;
+    }
+
+    .newsletter-inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .newsletter h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .newsletter p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 32px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 13px 18px;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .newsletter-form input:focus { border-color: rgba(249,69,46,0.6); }
+
+    .newsletter-form button {
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    .newsletter-form button:hover { opacity: 0.88; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 56px 5% 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 16px;
+      line-height: 1.7;
+      max-width: 360px;
+    }
+
+    .footer-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--red);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo-mark svg { width: 18px; height: 18px; }
+
+    .footer-logo-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .footer-logo-text span {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* FADE */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .service-card { grid-template-columns: 1fr; gap: 20px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .newsletter-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="white"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        Impulso Emprendedor
+        <span>by Integro</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/servicios" class="active">Servicios</a></li>
+      <li><a href="https://impulso-scorecard.vercel.app/" target="_blank">Impulso Score</a></li>
+      <li><a href="/#contacto" class="nav-cta">Contáctanos</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Inicio</a>
+    <a href="/servicios">Servicios</a>
+    <a href="https://impulso-scorecard.vercel.app/" target="_blank">Impulso Score</a>
+    <a href="/#contacto">Contáctanos</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="section-label">Lo que hacemos</div>
+      <h1>Nuestros servicios</h1>
+      <p>
+        En Impulso Emprendedor ayudamos a startups y empresas tech en México a transformar su esfuerzo comercial en un sistema estructurado y escalable. Diseñamos la arquitectura estratégica detrás de las ventas: definimos el cliente ideal, afinamos la propuesta de valor, construimos procesos comerciales claros y alineamos marketing con revenue para que el crecimiento deje de ser improvisado y se vuelva predecible.
+      </p>
+      <p style="margin-top:16px;">
+        Nuestro enfoque combina estrategia, ejecución y métricas. Implementamos estructuras de CRM, desarrollamos motores de generación de demanda y establecemos indicadores que permiten tomar decisiones con datos reales. No se trata solo de vender más, sino de construir una operación comercial sólida que soporte el crecimiento sostenible de la empresa a largo plazo.
+      </p>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="services-inner">
+
+      <div class="service-card fade-up">
+        <div class="service-tier">
+          <div class="service-tier-badge">Lite</div>
+        </div>
+        <div class="service-content">
+          <h2>Impulso Lite</h2>
+          <div class="service-ideal">Ideal para: Ideas avanzadas, MVP temprano, founders en fase inicial.</div>
+          <p>El punto de entrada al ecosistema de Impulso Emprendedor. Definimos las bases estratégicas que todo founder necesita antes de salir a vender: ICP, propuesta de valor y narrativa comercial inicial.</p>
+          <a href="/#contacto" class="btn-primary">Más información →</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up" style="transition-delay:0.1s;">
+        <div class="service-tier">
+          <div class="service-tier-badge">Startup</div>
+        </div>
+        <div class="service-content">
+          <h2>Impulso Startup</h2>
+          <div class="service-ideal">Ideal para: Founders con MVP funcional o primeros usuarios.</div>
+          <p>Construimos tu primer sistema comercial real. Procesos de prospección, seguimiento y cierre. CRM estructurado y primeros motores de generación de demanda para pasar de early adopters a clientes recurrentes.</p>
+          <a href="/#contacto" class="btn-primary">Más información →</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up" style="transition-delay:0.15s;">
+        <div class="service-tier">
+          <div class="service-tier-badge featured">Tech Pro</div>
+        </div>
+        <div class="service-content">
+          <h2>Impulso Tech Pro</h2>
+          <div class="service-ideal">Ideal para: Startups con producto sólido que necesitan mejorar ventas, procesos y posicionamiento.</div>
+          <p>Profundizamos en la arquitectura comercial completa. Optimizamos el funnel de ventas, establecemos KPIs claros, ajustamos el posicionamiento y construimos la estructura de forecast que te permite proyectar con datos reales.</p>
+          <a href="/#contacto" class="btn-primary">Más información →</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up" style="transition-delay:0.2s;">
+        <div class="service-tier">
+          <div class="service-tier-badge">Escala</div>
+        </div>
+        <div class="service-content">
+          <h2>Impulso Escala</h2>
+          <div class="service-ideal">Ideal para: Startups con tracción inicial que buscan escalar rápido.</div>
+          <p>Diseñamos e implementamos el motor de crecimiento. Demand generation avanzada, expansión de canales, estructura de equipo comercial y playbooks de ventas que se replican sin depender del founder.</p>
+          <a href="/#contacto" class="btn-primary">Más información →</a>
+        </div>
+      </div>
+
+      <div class="service-card fade-up" style="transition-delay:0.25s;">
+        <div class="service-tier">
+          <div class="service-tier-badge">Aceleradora</div>
+        </div>
+        <div class="service-content">
+          <h2>Impulso Aceleradora</h2>
+          <div class="service-ideal">Ideal para: Startups listas para profesionalizarse y prepararse para inversión o expansión nacional/internacional.</div>
+          <p>El nivel más completo. Preparamos tu startup para el siguiente stage: estructura organizacional, preparación para due diligence comercial, narrativa para inversores y estrategia de expansión regional.</p>
+          <a href="/#contacto" class="btn-primary">Más información →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <div class="section-label" style="color:rgba(249,69,46,0.9);">Newsletter</div>
+      <h2>Suscríbete a nuestro Newsletter</h2>
+      <p>Entérate primero de nuestras novedades, productos y tendencias sobre el emprendimiento.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="tu@email.com" required />
+        <button type="submit">Suscribirse →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <div class="footer-logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="white"/>
+              </svg>
+            </div>
+            <div class="footer-logo-text">
+              Impulso Emprendedor
+              <span>by Integro</span>
+            </div>
+          </div>
+          <p>Estructura ejecutiva para founders tech. Convertimos ideas en sistemas comerciales reales que generan revenue predecible.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/servicios">Servicios</a></li>
+            <li><a href="https://impulso-scorecard.vercel.app/" target="_blank">Impulso Score</a></li>
+            <li><a href="/#contacto">Contáctanos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:info@impulsoemprendedor.com.mx">info@impulsoemprendedor.com.mx</a></li>
+            <li><a href="tel:+526863048482">+52 (686) 304 8482</a></li>
+            <li><a>Mexicali BC, Mexico</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Derechos reservados © Impulso Emprendedor by Integro</p>
+        <p style="color:rgba(255,255,255,0.2);">impulsoemprendedor.com.mx</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '¡Registrado! ✓';
+      btn.style.background = '#22C55E';
+      setTimeout(() => {
+        btn.textContent = 'Suscribirse →';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

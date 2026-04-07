@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Impulso Emprendedor by Integro</title>
+  <meta name="description" content="Donde las startups tech en Mexico dejan de improvisar y empiezan a escalar. Estructura, Ventas y Go-To-Market para founders tech." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #F9452E;
+      --dark: #313036;
+      --off-white: #F7F6F4;
+      --light-bg: #F5F3F0;
+      --white: #ffffff;
+      --gray-mid: #6B6A70;
+      --gray-light: #DDDBD8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 38px;
+      height: 38px;
+      background: var(--red);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo-mark svg { width: 22px; height: 22px; }
+
+    .nav-logo-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .nav-logo-text span {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--gray-mid);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--dark);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.88; color: var(--white) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 20px 5%;
+      z-index: 99;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--dark);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: var(--red);
+      border-radius: 50%;
+      opacity: 0.06;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      left: 40%;
+      width: 300px;
+      height: 300px;
+      background: var(--red);
+      border-radius: 50%;
+      opacity: 0.04;
+    }
+
+    .hero-inner {
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(249,69,46,0.15);
+      border: 1px solid rgba(249,69,46,0.3);
+      color: #ff7a67;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    .hero-sub strong {
+      color: rgba(255,255,255,0.95);
+      font-weight: 600;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+      max-width: 640px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(249,69,46,0.4);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--dark);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 2px solid var(--dark);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.4);
+      transition: all 0.2s;
+    }
+
+    .btn-outline-white:hover {
+      border-color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 5%; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    h2.section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    h2.section-title em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .section-lead {
+      font-size: 1.1rem;
+      color: var(--gray-mid);
+      max-width: 580px;
+      line-height: 1.7;
+    }
+
+    /* ── QUE ES ── */
+    .que-es {
+      background: var(--off-white);
+    }
+
+    .que-es-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .que-es-list {
+      list-style: none;
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .que-es-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .que-es-list li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .que-es-cta-box {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+    }
+
+    .que-es-cta-box h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .que-es-cta-box p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    /* ── ECOSISTEMA / STATS ── */
+    .ecosistema {
+      background: var(--white);
+    }
+
+    .ecosistema-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ecosistema-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
+
+    .eco-bullets {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .eco-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15.5px;
+      color: var(--dark);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+
+    .eco-bullets li:last-child { border-bottom: none; }
+
+    .eco-bullets li::before {
+      content: '→';
+      color: var(--red);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .verdad-incómoda {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-top: 28px;
+      border-left: 4px solid var(--red);
+    }
+
+    .verdad-incómoda p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+    }
+
+    .verdad-incómoda strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gray-light);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: 40px 36px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--gray-mid);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .no-proceso {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 36px;
+      margin-top: 48px;
+    }
+
+    .no-proceso p {
+      font-size: 15px;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .no-proceso-list {
+      list-style: none;
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .no-proceso-list li {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .resolution {
+      margin-top: 20px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    /* ── FRAMEWORK ── */
+    .framework {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .framework-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .framework .section-title { color: var(--white); }
+    .framework .section-lead { color: rgba(255,255,255,0.6); }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+
+    .pillar-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 32px 28px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(249,69,46,0.4);
+    }
+
+    .pillar-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .pillar-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+
+    /* ── PARA QUIEN ── */
+    .para-quien {
+      background: var(--off-white);
+    }
+
+    .para-quien-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .para-quien-list {
+      list-style: none;
+      margin-top: 28px;
+    }
+
+    .para-quien-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      color: var(--dark);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-light);
+      line-height: 1.5;
+    }
+
+    .para-quien-list li:last-child { border-bottom: none; }
+
+    .check-icon {
+      width: 22px;
+      height: 22px;
+      background: rgba(249,69,46,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .check-icon::after {
+      content: '✓';
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .modo-yo-box {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+    }
+
+    .modo-yo-box h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .modo-yo-box p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    /* ── TEAM ── */
+    .team {
+      background: var(--white);
+    }
+
+    .team-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 52px;
+    }
+
+    .team-card {
+      background: var(--off-white);
+      border-radius: 16px;
+      padding: 40px 36px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .team-card:hover { transform: translateY(-4px); }
+
+    .team-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      border: 3px solid var(--gray-light);
+    }
+
+    .team-avatar-placeholder {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--gray-light);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .team-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .team-card p {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 5%;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .cta-banner p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 500px;
+      margin: 0 auto 36px;
+    }
+
+    /* ── CONTACTO ── */
+    .contacto {
+      background: var(--off-white);
+    }
+
+    .contacto-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .contact-info-items {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--red);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: var(--white);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-detail h4 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray-mid);
+      margin-bottom: 4px;
+    }
+
+    .contact-detail a, .contact-detail p {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    .contact-detail a:hover { color: var(--red); }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    .contact-form h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: var(--dark);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-mid);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray-light);
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      color: var(--dark);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--red);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 56px 5% 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 16px;
+      line-height: 1.7;
+      max-width: 360px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 14.5px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--red);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo-mark svg { width: 18px; height: 18px; }
+
+    .footer-logo-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .footer-logo-text span {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .que-es-inner,
+      .ecosistema-header,
+      .para-quien-inner,
+      .contacto-inner,
+      .footer-top { grid-template-columns: 1fr; gap: 40px; }
+
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; max-width: 380px; margin: 52px auto 0; }
+    }
+
+    @media (max-width: 600px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .que-es-list { grid-template-columns: 1fr; }
+      .hero { padding: 60px 5% 60px; }
+      section { padding: 60px 5%; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="white"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        Impulso Emprendedor
+        <span>by Integro</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/servicios">Servicios</a></li>
+      <li><a href="https://impulso-scorecard.vercel.app/" target="_blank">Impulso Score</a></li>
+      <li><a href="#contacto" class="nav-cta">Contáctanos</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Inicio</a>
+    <a href="/servicios">Servicios</a>
+    <a href="https://impulso-scorecard.vercel.app/" target="_blank">Impulso Score</a>
+    <a href="#contacto">Contáctanos</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Estructura · Ventas · Go-To-Market
+      </div>
+      <h1>Conoce <em>Impulso</em><br/>Emprendedor.</h1>
+      <p class="hero-sub">
+        Donde las startups tech en México <strong>dejan de improvisar</strong> y empiezan a escalar.
+      </p>
+      <p class="hero-desc">
+        Convertimos ideas en sistemas comerciales reales que generan revenue predecible.
+      </p>
+      <a href="#contacto" class="btn-primary">Más información →</a>
+    </div>
+  </section>
+
+  <!-- QUE ES -->
+  <section class="que-es">
+    <div class="que-es-inner">
+      <div class="fade-up">
+        <div class="section-label">Quiénes somos</div>
+        <h2 class="section-title">No somos<br/>una agencia.</h2>
+        <p class="section-lead">Somos estructura ejecutiva para founders tech.</p>
+        <p style="margin-top:16px; font-size:15px; color:var(--gray-mid); line-height:1.7;">
+          Impulso Emprendedor es la división estratégica enfocada en:
+        </p>
+        <ul class="que-es-list">
+          <li>Ventas B2B</li>
+          <li>Demand Generation</li>
+          <li>Sistemas comerciales</li>
+          <li>Procesos escalables</li>
+          <li>Estructura de CRM</li>
+          <li>Go-To-Market para SaaS</li>
+        </ul>
+        <p style="margin-top:24px; font-size:15px; color:var(--gray-mid); line-height:1.7;">
+          Trabajamos contigo para que tu startup deje de depender de la suerte y empiece a operar como empresa.
+        </p>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s;">
+        <div class="que-es-cta-box">
+          <h3>¿Listo para dejar de improvisar?</h3>
+          <p>Si tu startup ya tiene producto pero no tiene sistema comercial, es el momento de construirlo.</p>
+          <a href="#contacto" class="btn-primary">Hablemos →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSISTEMA -->
+  <section class="ecosistema">
+    <div class="ecosistema-inner">
+      <div class="ecosistema-header">
+        <div class="fade-up">
+          <div class="section-label">El contexto</div>
+          <h2 class="section-title">El Momento del<br/>Ecosistema Tech<br/>en México</h2>
+          <p class="section-lead">México está viviendo una transformación digital acelerada:</p>
+          <ul class="eco-bullets">
+            <li>Crecimiento sostenido en fintech, healthtech, edtech y SaaS</li>
+            <li>Más fondos de inversión apostando por tecnología</li>
+            <li>Más talento técnico y comercial emergiendo</li>
+          </ul>
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s;">
+          <div class="verdad-incómoda">
+            <p>
+              <strong>Pero aquí está la verdad incómoda:</strong><br/><br/>
+              Muchas startups mueren no por falta de producto… sino por falta de estructura comercial.
+            </p>
+          </div>
+          <div class="no-proceso" style="margin-top:20px;">
+            <p>Sin:</p>
+            <ul class="no-proceso-list">
+              <li>Procesos</li>
+              <li>Estrategia de ventas</li>
+              <li>Claridad en adquisición</li>
+              <li>Previsibilidad</li>
+            </ul>
+            <p class="resolution">Ahí es donde entramos nosotros.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid fade-up">
+        <div class="stat-card">
+          <div class="stat-number">6K+</div>
+          <div class="stat-label">Startups tech<br/>en México</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">70%</div>
+          <div class="stat-label">Carecen de procesos<br/>comerciales estructurados</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Top 3</div>
+          <div class="stat-label">México es uno de los<br/>ecosistemas más grandes de la región</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORK -->
+  <section class="framework">
+    <div class="framework-inner">
+      <div class="fade-up">
+        <div class="section-label" style="color:rgba(249,69,46,0.9);">Nuestro enfoque</div>
+        <h2 class="section-title">De la idea al<br/>revenue predecible.</h2>
+        <p class="section-lead">Nuestro framework se basa en 4 pilares:</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card fade-up" style="transition-delay:0.05s;">
+          <div class="pillar-num">Pilar 01</div>
+          <h3>Claridad Estratégica</h3>
+          <p>Definimos ICP, propuesta de valor, pricing, posicionamiento y narrativa comercial.</p>
+        </div>
+        <div class="pillar-card fade-up" style="transition-delay:0.12s;">
+          <div class="pillar-num">Pilar 02</div>
+          <h3>Arquitectura Comercial</h3>
+          <p>Diseñamos procesos de prospección, seguimiento, cierre y expansión.</p>
+        </div>
+        <div class="pillar-card fade-up" style="transition-delay:0.19s;">
+          <div class="pillar-num">Pilar 03</div>
+          <h3>Demand Generation</h3>
+          <p>Construimos motores reales de generación de oportunidades.</p>
+        </div>
+        <div class="pillar-card fade-up" style="transition-delay:0.26s;">
+          <div class="pillar-num">Pilar 04</div>
+          <h3>Operación & Métricas</h3>
+          <p>KPIs, CRM estructurado, forecast y accountability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIEN -->
+  <section class="para-quien">
+    <div class="para-quien-inner">
+      <div class="fade-up">
+        <div class="section-label">Para quién es</div>
+        <h2 class="section-title">Impulso Emprendedor<br/>es para:</h2>
+        <ul class="para-quien-list">
+          <li>
+            <div class="check-icon"></div>
+            <span>Founders tech que ya validaron producto pero no tienen ventas estructuradas.</span>
+          </li>
+          <li>
+            <div class="check-icon"></div>
+            <span>Startups SaaS que necesitan escalar adquisición.</span>
+          </li>
+          <li>
+            <div class="check-icon"></div>
+            <span>Empresas tech en etapa temprana que buscan profesionalizar su operación comercial.</span>
+          </li>
+          <li>
+            <div class="check-icon"></div>
+            <span>Equipos que quieren dejar de improvisar.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s;">
+        <div class="modo-yo-box">
+          <h3>Si estás en modo "todo depende de mí"…</h3>
+          <p>Necesitas estructura. Y es exactamente lo que construimos contigo.</p>
+          <a href="#contacto" class="btn-primary">Más información →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team">
+    <div class="team-inner">
+      <div class="fade-up">
+        <div class="section-label" style="text-align:center;">El equipo</div>
+        <h2 class="section-title" style="text-align:center;">Nuestro equipo</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card fade-up" style="transition-delay:0.1s;">
+          <img
+            src="https://www.impulsoemprendedor.com.mx/web/image/1645-eaa90648/DSC00540.webp"
+            alt="Arcelia Olmos"
+            class="team-avatar"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="team-avatar-placeholder" style="display:none;">AO</div>
+          <h3>Arcelia Olmos</h3>
+          <p>Directora de ventas</p>
+        </div>
+        <div class="team-card fade-up" style="transition-delay:0.2s;">
+          <img
+            src="https://www.impulsoemprendedor.com.mx/web/image/1644-9713a3b3/DSC00557.webp"
+            alt="Jay Ibarra"
+            class="team-avatar"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="team-avatar-placeholder" style="display:none;">JI</div>
+          <h3>Jay Ibarra</h3>
+          <p>Director general</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="fade-up">
+      <h2>Si estás listo para escalar con<br/>estructura, este es el momento.</h2>
+      <p>México necesita más startups que sobrevivan y escalen. No más buenas ideas que mueren en el intento.</p>
+      <a href="#contacto" class="btn-outline-white">Contáctanos →</a>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-inner">
+      <div class="fade-up">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-lead">
+          Si tienes dudas sobre tu estrategia comercial, tu Go-To-Market o simplemente quieres entender cómo podemos ayudarte a escalar tu startup, escríbenos. Nuestro equipo revisa cada mensaje con enfoque estratégico y te responderá a la brevedad para dar el siguiente paso con claridad y dirección.
+        </p>
+
+        <div class="contact-info-items">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail">
+              <h4>Correo electrónico</h4>
+              <a href="mailto:info@impulsoemprendedor.com.mx">info@impulsoemprendedor.com.mx</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91A16 16 0 0 0 15.1 15.9l.77-.79a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-detail">
+              <h4>Teléfono</h4>
+              <a href="tel:+526863048482">+52 (686) 304 8482</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail">
+              <h4>Oficina</h4>
+              <p>Mexicali BC, Mexico</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fade-up" style="transition-delay:0.15s;">
+        <h3>Envíanos un mensaje</h3>
+        <form onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Mensaje</label>
+            <textarea placeholder="¿En qué podemos ayudarte?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+            Enviar mensaje →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <div class="footer-logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="white"/>
+              </svg>
+            </div>
+            <div class="footer-logo-text">
+              Impulso Emprendedor
+              <span>by Integro</span>
+            </div>
+          </div>
+          <p>Estructura ejecutiva para founders tech. Convertimos ideas en sistemas comerciales reales que generan revenue predecible.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/servicios">Servicios</a></li>
+            <li><a href="https://impulso-scorecard.vercel.app/" target="_blank">Impulso Score</a></li>
+            <li><a href="#contacto">Contáctanos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:info@impulsoemprendedor.com.mx">info@impulsoemprendedor.com.mx</a></li>
+            <li><a href="tel:+526863048482">+52 (686) 304 8482</a></li>
+            <li><a href="#">Mexicali BC, Mexico</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Derechos reservados © Impulso Emprendedor by Integro</p>
+        <p style="color:rgba(255,255,255,0.2);">impulsoemprendedor.com.mx</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Fade-up on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Form
+    function handleForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = '¡Mensaje enviado! ✓';
+      btn.style.background = '#22C55E';
+      setTimeout(() => {
+        btn.textContent = 'Enviar mensaje →';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
