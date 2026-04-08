@@ -1339,22 +1339,23 @@
 
       <div class="contact-form fade-up" style="transition-delay:0.15s;">
         <h3>Envíanos un mensaje</h3>
-        <form onsubmit="handleForm(event)">
+        <form id="contact-form" onsubmit="handleForm(event)">
           <div class="form-group">
             <label>Nombre</label>
-            <input type="text" placeholder="Tu nombre" required />
+            <input id="cf-nombre" type="text" placeholder="Tu nombre" required />
           </div>
           <div class="form-group">
             <label>Correo electrónico</label>
-            <input type="email" placeholder="tu@email.com" required />
+            <input id="cf-correo" type="email" placeholder="tu@email.com" required />
           </div>
           <div class="form-group">
             <label>Mensaje</label>
-            <textarea placeholder="¿En qué podemos ayudarte?"></textarea>
+            <textarea id="cf-mensaje" placeholder="¿En qué podemos ayudarte?"></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+          <button id="cf-btn" type="submit" class="btn-primary" style="width:100%; justify-content:center;">
             Enviar mensaje →
           </button>
+          <p id="cf-status" style="display:none;margin-top:14px;font-size:14px;text-align:center;"></p>
         </form>
       </div>
     </div>
@@ -1417,16 +1418,42 @@
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
     // Form
-    function handleForm(e) {
+    async function handleForm(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = '¡Mensaje enviado! ✓';
-      btn.style.background = '#22C55E';
-      setTimeout(() => {
+      const btn = document.getElementById('cf-btn');
+      const status = document.getElementById('cf-status');
+      const nombre = document.getElementById('cf-nombre').value.trim();
+      const correo = document.getElementById('cf-correo').value.trim();
+      const mensaje = document.getElementById('cf-mensaje').value.trim();
+
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+      status.style.display = 'none';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nombre, correo, mensaje }),
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          status.textContent = '¡Mensaje enviado! Te contactamos pronto.';
+          status.style.color = '#22C55E';
+          status.style.display = 'block';
+          e.target.reset();
+        } else {
+          throw new Error(data.error || 'Error desconocido');
+        }
+      } catch {
+        status.textContent = 'Hubo un error. Escríbenos directo a info@impulsoemprendedor.com.mx';
+        status.style.color = '#F9452E';
+        status.style.display = 'block';
+      } finally {
         btn.textContent = 'Enviar mensaje →';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
+        btn.disabled = false;
+      }
     }
   </script>
 </body>
