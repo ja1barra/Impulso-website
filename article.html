@@ -220,32 +220,15 @@
     overflow: hidden;
     height: 340px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    align-items: stretch;
   }
 
-  .visual-block::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 40px,
-      rgba(249,69,46,0.05) 40px,
-      rgba(249,69,46,0.05) 41px
-    );
-  }
-
-  .visual-block-number {
-    font-family: 'Petrov Sans', sans-serif;
-    font-size: 14rem;
-    line-height: 1;
-    color: rgba(255,255,255,0.07);
-    user-select: none;
-    position: relative;
-    z-index: 1;
+  .article-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
   }
 
   /* ── ARTICLE LAYOUT ── */
@@ -773,6 +756,7 @@ const posts = [
     categoryLabel: 'Ventas B2B',
     tagClass: 'tag-ventas',
     colorClass: 'cv1',
+    image: '/images/blog/article-0.svg',
     title: 'Por qué tu startup tiene producto pero no tiene ventas',
     fullTitle: 'Por qué tu startup tiene producto pero no tiene ventas: el problema estructural que nadie te dice',
     excerpt: 'El 70% de las startups tech en México con producto validado no tiene un sistema de ventas. No es un problema de mercado.',
@@ -805,6 +789,7 @@ const posts = [
     categoryLabel: 'Go-To-Market',
     tagClass: 'tag-gtm',
     colorClass: 'cv2',
+    image: '/images/blog/article-1.svg',
     title: 'Cómo construir tu estrategia Go-To-Market desde cero',
     fullTitle: 'Cómo construir tu estrategia Go-To-Market desde cero: guía para founders SaaS en México',
     excerpt: 'GTM no es un deck. Es un sistema operativo que define cómo llegas al mercado, cómo adquieres clientes y cómo escalas sin romper el negocio.',
@@ -832,6 +817,7 @@ const posts = [
     categoryLabel: 'Ventas B2B',
     tagClass: 'tag-ventas',
     colorClass: 'cv3',
+    image: '/images/blog/article-2.svg',
     title: 'ICP: el documento que toda startup necesita antes de vender',
     fullTitle: 'ICP: el documento que toda startup necesita antes de intentar vender',
     excerpt: 'Sin un Ideal Customer Profile documentado, tu equipo de ventas está disparando al aire. Aquí cómo construirlo desde datos reales.',
@@ -863,6 +849,7 @@ const posts = [
     categoryLabel: 'Operaciones',
     tagClass: 'tag-ops',
     colorClass: 'cv4',
+    image: '/images/blog/article-3.svg',
     title: 'Cómo estructurar tu CRM cuando eres un equipo de 1 o 2 personas',
     fullTitle: 'Cómo estructurar tu CRM cuando eres un equipo de 1 o 2 personas: lo mínimo viable que sí funciona',
     excerpt: 'Un CRM no es solo un software. Es la arquitectura de tu proceso comercial. Te mostramos cómo configurarlo para no perderte en la operación.',
@@ -890,6 +877,7 @@ const posts = [
     categoryLabel: 'SaaS',
     tagClass: 'tag-saas',
     colorClass: 'cv5',
+    image: '/images/blog/article-4.svg',
     title: 'Métricas SaaS que todo founder debe conocer antes de hablar con un inversionista',
     fullTitle: 'Las métricas SaaS que todo founder debe conocer antes de hablar con un inversionista',
     excerpt: 'MRR, ARR, CAC, LTV, Churn, NRR. No son acrónimos de moda: son el lenguaje con el que vas a defender tu negocio.',
@@ -916,6 +904,7 @@ const posts = [
     categoryLabel: 'Ventas B2B',
     tagClass: 'tag-ventas',
     colorClass: 'cv6',
+    image: '/images/blog/article-5.svg',
     title: 'Cómo hacer outreach en LinkedIn sin sonar a spam',
     fullTitle: 'Cómo hacer outreach en LinkedIn sin sonar a spam: el framework que usamos con startups tech',
     excerpt: 'El 90% de los mensajes de prospección en LinkedIn son ignorados. No porque el canal no funcione, sino porque el mensaje está mal construido.',
@@ -946,6 +935,7 @@ const posts = [
     categoryLabel: 'Go-To-Market',
     tagClass: 'tag-gtm',
     colorClass: 'cv7',
+    image: '/images/blog/article-6.svg',
     title: 'Pricing para SaaS en México: cómo fijar el precio sin subestimarte',
     fullTitle: 'Pricing para SaaS en México: cómo fijar el precio sin subestimarte ni perder deals',
     excerpt: 'El precio no es solo un número. Es un posicionamiento. La mayoría de los founders tech en México cobran menos de lo que deberían.',
@@ -971,6 +961,7 @@ const posts = [
     categoryLabel: 'Mindset',
     tagClass: 'tag-mindset',
     colorClass: 'cv8',
+    image: '/images/blog/article-7.svg',
     title: 'El síndrome del fundador todólogo y cómo salir de él',
     fullTitle: 'El síndrome del fundador todólogo: por qué hacer todo tú mismo frena tu crecimiento',
     excerpt: 'Ser el CEO, CTO, vendedor, diseñador y soporte al mismo tiempo no es señal de dedicación. Es señal de que no tienes estructura.',
@@ -996,6 +987,7 @@ const posts = [
     categoryLabel: 'Operaciones',
     tagClass: 'tag-ops',
     colorClass: 'cv9',
+    image: '/images/blog/article-8.svg',
     title: 'SOPs para startups: cómo documentar tu operación sin morir en el intento',
     fullTitle: 'SOPs para startups: cómo documentar tu operación sin morir en el intento',
     excerpt: 'Los Procedimientos Operativos Estándar no son burocracia corporativa. Son la diferencia entre un negocio que depende de ti y uno que puede escalar.',
@@ -1023,6 +1015,7 @@ const posts = [
     categoryLabel: 'SaaS',
     tagClass: 'tag-saas',
     colorClass: 'cv10',
+    image: '/images/blog/article-9.svg',
     title: 'Demand Generation para SaaS B2B: qué funciona en México en 2025',
     fullTitle: 'Demand Generation para SaaS B2B: qué canales realmente funcionan en México en 2025',
     excerpt: 'Antes de invertir en paid ads, necesitas entender cuál es el canal de adquisición correcto para tu etapa, tu ICP y tu presupuesto.',
@@ -1048,6 +1041,7 @@ const posts = [
     categoryLabel: 'Go-To-Market',
     tagClass: 'tag-gtm',
     colorClass: 'cv11',
+    image: '/images/blog/article-10.svg',
     title: 'Cómo escribir una propuesta comercial que cierra deals',
     fullTitle: 'Cómo escribir una propuesta comercial que cierra deals: estructura y errores comunes',
     excerpt: 'Una propuesta comercial no es un menú de precios. Es el documento donde transformas la conversación en compromiso.',
@@ -1073,6 +1067,7 @@ const posts = [
     categoryLabel: 'Mindset',
     tagClass: 'tag-mindset',
     colorClass: 'cv12',
+    image: '/images/blog/article-11.svg',
     title: 'Revenue predecible: el objetivo real de cualquier startup que quiere escalar',
     fullTitle: 'Revenue predecible: por qué es el objetivo real de cualquier startup que quiere escalar',
     excerpt: 'El MRR inconsistente no es una etapa temporal. Es una señal de que tu sistema comercial tiene huecos que se irán haciendo más grandes.',
@@ -1154,8 +1149,8 @@ function render() {
 
     <!-- Hero visual -->
     <div class="article-hero-visual">
-      <div class="visual-block ${post.colorClass}">
-        <span class="visual-block-number">${String(post.id + 1).padStart(2,'0')}</span>
+      <div class="visual-block">
+        <img class="article-hero-img" src="${post.image}" alt="${post.title}">
       </div>
     </div>
 

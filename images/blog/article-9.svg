@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" fill="none">
+  <rect width="860" height="380" fill="#1C1A2C"/>
+  <!-- grid -->
+  <line x1="0" y1="95" x2="860" y2="95" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="190" x2="860" y2="190" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="285" x2="860" y2="285" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="430" y1="0" x2="430" y2="380" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Funnel body -->
+  <path d="M230 60 L630 60 L540 170 L540 300 L320 300 L320 170 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Funnel sections with channels -->
+  <!-- Top: channels in -->
+  <rect x="230" y="60" width="400" height="55" rx="0" fill="rgba(255,255,255,0.04)"/>
+  <text x="430" y="93" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="2">AWARENESS</text>
+
+  <rect x="286" y="125" width="288" height="38" rx="0" fill="rgba(255,255,255,0.03)"/>
+  <text x="430" y="148" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" letter-spacing="2">CONSIDERACIÓN</text>
+
+  <rect x="320" y="172" width="220" height="38" rx="0" fill="rgba(249,69,46,0.06)"/>
+  <text x="430" y="196" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(249,69,46,0.6)" letter-spacing="2">INTENCIÓN</text>
+
+  <rect x="320" y="218" width="220" height="38" rx="0" fill="rgba(249,69,46,0.1)"/>
+  <text x="430" y="242" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(249,69,46,0.75)" letter-spacing="2">DECISIÓN</text>
+
+  <!-- Output arrow -->
+  <rect x="370" y="300" width="120" height="40" rx="6" fill="rgba(28,122,72,0.2)" stroke="rgba(28,122,72,0.4)" stroke-width="1"/>
+  <text x="430" y="325" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(28,122,72,0.9)" font-weight="600">CLIENTES</text>
+
+  <!-- Channel bubbles feeding in (left) -->
+  <rect x="60" y="58" width="120" height="30" rx="15" fill="rgba(43,82,204,0.15)" stroke="rgba(43,82,204,0.3)" stroke-width="1"/>
+  <text x="120" y="78" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(43,82,204,0.8)">LinkedIn Outbound</text>
+  <line x1="180" y1="73" x2="228" y2="80" stroke="rgba(43,82,204,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <rect x="50" y="110" width="130" height="30" rx="15" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="115" y="130" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Contenido Orgánico</text>
+  <line x1="180" y1="125" x2="285" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <rect x="60" y="162" width="110" height="30" rx="15" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="115" y="182" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">Referidos</text>
+  <line x1="170" y1="177" x2="320" y2="183" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Channel bubbles (right) — paid/scale -->
+  <rect x="680" y="58" width="100" height="30" rx="15" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="730" y="78" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.25)">Paid Ads</text>
+  <line x1="680" y1="73" x2="632" y2="80" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <rect x="680" y="110" width="100" height="30" rx="15" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="730" y="130" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.25)">SEO</text>
+  <line x1="680" y1="125" x2="575" y2="140" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Stage labels -->
+  <text x="80" y="50" font-family="sans-serif" font-size="9" fill="rgba(43,82,204,0.8)" letter-spacing="1">PRE-PMF</text>
+  <text x="680" y="50" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.25)" letter-spacing="1">SCALE</text>
+
+  <text x="48" y="345" font-family="sans-serif" font-size="11" fill="rgba(249,69,46,0.7)" letter-spacing="2" font-weight="600">SAAS</text>
+  <text x="48" y="370" font-family="sans-serif" font-size="40" fill="rgba(255,255,255,0.04)" font-weight="900" letter-spacing="-2">DEMAND GEN</text>
+</svg>

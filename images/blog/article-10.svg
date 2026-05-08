@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" fill="none">
+  <rect width="860" height="380" fill="#1F2416"/>
+  <!-- grid -->
+  <line x1="0" y1="95" x2="860" y2="95" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="190" x2="860" y2="190" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="285" x2="860" y2="285" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="430" y1="0" x2="430" y2="380" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Main document -->
+  <rect x="200" y="55" width="300" height="280" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+  <!-- Dog-ear top right -->
+  <path d="M470 55 L500 85 L470 85 Z" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Document header -->
+  <rect x="218" y="75" width="230" height="16" rx="4" fill="rgba(249,69,46,0.3)"/>
+  <text x="333" y="87" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(249,69,46,0.9)" letter-spacing="1.5" font-weight="600">PROPUESTA COMERCIAL</text>
+
+  <!-- Section: Diagnóstico -->
+  <text x="218" y="114" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="1" font-weight="600">DIAGNÓSTICO</text>
+  <rect x="218" y="120" width="250" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="218" y="132" width="210" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Section: Solución -->
+  <text x="218" y="158" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="1" font-weight="600">SOLUCIÓN</text>
+  <rect x="218" y="164" width="250" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="218" y="176" width="190" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Section: Resultados -->
+  <text x="218" y="202" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="1" font-weight="600">RESULTADOS ESPERADOS</text>
+  <rect x="218" y="208" width="250" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="218" y="220" width="220" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Section: Inversión (highlighted) -->
+  <rect x="210" y="238" width="268" height="44" rx="6" fill="rgba(249,69,46,0.08)" stroke="rgba(249,69,46,0.25)" stroke-width="1"/>
+  <text x="218" y="252" font-family="sans-serif" font-size="9" fill="rgba(249,69,46,0.7)" letter-spacing="1" font-weight="600">INVERSIÓN</text>
+  <text x="344" y="272" text-anchor="middle" font-family="sans-serif" font-size="22" fill="white" font-weight="700">$4,800 / mes</text>
+
+  <!-- Section: Próximos pasos -->
+  <text x="218" y="302" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.5)" letter-spacing="1" font-weight="600">PRÓXIMOS PASOS →</text>
+  <rect x="218" y="308" width="250" height="6" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <rect x="218" y="320" width="180" height="6" rx="2" fill="rgba(255,255,255,0.06)"/>
+
+  <!-- Signature / handshake area -->
+  <rect x="560" y="170" width="200" height="110" rx="10" fill="rgba(28,122,72,0.08)" stroke="rgba(28,122,72,0.3)" stroke-width="1.5"/>
+  <text x="660" y="215" text-anchor="middle" font-family="sans-serif" font-size="36" fill="rgba(28,122,72,0.4)">🤝</text>
+  <text x="660" y="252" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(28,122,72,0.6)" letter-spacing="1">DEAL CERRADO</text>
+  <text x="660" y="268" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(28,122,72,0.4)">✓ Signed</text>
+
+  <!-- Email X badge -->
+  <rect x="560" y="100" width="200" height="58" rx="10" fill="rgba(249,69,46,0.06)" stroke="rgba(249,69,46,0.2)" stroke-width="1"/>
+  <text x="660" y="122" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,0.3)" letter-spacing="1">PROPUESTA POR EMAIL</text>
+  <text x="660" y="140" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(249,69,46,0.5)">↓ 60-70% menor tasa de cierre</text>
+
+  <text x="48" y="56" font-family="sans-serif" font-size="11" fill="rgba(249,69,46,0.7)" letter-spacing="2" font-weight="600">GO-TO-MARKET</text>
+  <text x="48" y="345" font-family="sans-serif" font-size="52" fill="rgba(255,255,255,0.04)" font-weight="900" letter-spacing="-2">PROPUESTA</text>
+</svg>

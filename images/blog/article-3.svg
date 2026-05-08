@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" fill="none">
+  <rect width="860" height="380" fill="#17291E"/>
+  <!-- grid -->
+  <line x1="0" y1="95" x2="860" y2="95" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="285" x2="860" y2="285" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- CRM Pipeline columns -->
+  <!-- Column 1: Lead -->
+  <rect x="80" y="70" width="130" height="240" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="145" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1.5" font-weight="600">LEAD</text>
+  <rect x="92" y="108" width="106" height="44" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <rect x="92" y="162" width="106" height="44" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <rect x="92" y="216" width="106" height="44" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <rect x="92" y="270" width="106" height="30" rx="6" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- Column 2: Contactado -->
+  <rect x="228" y="70" width="130" height="240" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="293" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1.5" font-weight="600">CONTACTADO</text>
+  <rect x="240" y="108" width="106" height="44" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <rect x="240" y="162" width="106" height="44" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+  <!-- Column 3: Calificado -->
+  <rect x="376" y="70" width="130" height="240" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="441" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1.5" font-weight="600">CALIFICADO</text>
+  <rect x="388" y="108" width="106" height="44" rx="6" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+  <!-- Column 4: Propuesta -->
+  <rect x="524" y="70" width="130" height="240" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="589" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1.5" font-weight="600">PROPUESTA</text>
+  <rect x="536" y="108" width="106" height="44" rx="6" fill="rgba(249,69,46,0.12)" stroke="rgba(249,69,46,0.3)" stroke-width="1"/>
+
+  <!-- Column 5: Closed -->
+  <rect x="672" y="70" width="110" height="240" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="727" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1.5" font-weight="600">CLOSED</text>
+  <rect x="684" y="108" width="86" height="44" rx="6" fill="rgba(28,122,72,0.2)" stroke="rgba(28,122,72,0.4)" stroke-width="1"/>
+  <text x="727" y="134" text-anchor="middle" font-family="sans-serif" font-size="16" fill="rgba(28,122,72,0.8)">✓</text>
+
+  <!-- Card content lines -->
+  <rect x="100" y="116" width="60" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="100" y="128" width="80" height="5" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="100" y="170" width="60" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="100" y="182" width="80" height="5" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="100" y="224" width="60" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="100" y="236" width="80" height="5" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="248" y="116" width="60" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="248" y="128" width="80" height="5" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="248" y="170" width="60" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="248" y="182" width="80" height="5" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="396" y="116" width="60" height="6" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="396" y="128" width="80" height="5" rx="2" fill="rgba(255,255,255,0.07)"/>
+  <rect x="544" y="116" width="60" height="6" rx="2" fill="rgba(249,69,46,0.5)"/>
+  <rect x="544" y="128" width="80" height="5" rx="2" fill="rgba(249,69,46,0.2)"/>
+
+  <!-- Drag arrows between columns -->
+  <text x="218" y="135" font-family="sans-serif" font-size="14" fill="rgba(255,255,255,0.15)">→</text>
+  <text x="366" y="135" font-family="sans-serif" font-size="14" fill="rgba(255,255,255,0.15)">→</text>
+  <text x="514" y="135" font-family="sans-serif" font-size="14" fill="rgba(255,255,255,0.15)">→</text>
+  <text x="660" y="135" font-family="sans-serif" font-size="14" fill="rgba(249,69,46,0.5)">→</text>
+
+  <text x="48" y="56" font-family="sans-serif" font-size="11" fill="rgba(249,69,46,0.7)" letter-spacing="2" font-weight="600">OPERACIONES</text>
+  <text x="400" y="345" font-family="sans-serif" font-size="62" fill="rgba(255,255,255,0.04)" font-weight="900" letter-spacing="-2">CRM</text>
+</svg>

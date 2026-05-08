@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" fill="none">
+  <rect width="860" height="380" fill="#172433"/>
+  <!-- grid -->
+  <line x1="0" y1="95" x2="860" y2="95" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="190" x2="860" y2="190" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="285" x2="860" y2="285" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="215" y1="0" x2="215" y2="380" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="430" y1="0" x2="430" y2="380" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="645" y1="0" x2="645" y2="380" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Company cards (greyed out) -->
+  <rect x="80" y="120" width="120" height="80" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="95" y="135" width="40" height="14" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <rect x="95" y="158" width="80" height="7" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="95" y="170" width="60" height="7" rx="2" fill="rgba(255,255,255,0.05)"/>
+
+  <rect x="80" y="220" width="120" height="80" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="95" y="235" width="40" height="14" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <rect x="95" y="258" width="80" height="7" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="95" y="270" width="60" height="7" rx="2" fill="rgba(255,255,255,0.05)"/>
+
+  <rect x="660" y="120" width="120" height="80" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="675" y="135" width="40" height="14" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <rect x="675" y="158" width="80" height="7" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="675" y="170" width="60" height="7" rx="2" fill="rgba(255,255,255,0.05)"/>
+
+  <rect x="660" y="220" width="120" height="80" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <rect x="675" y="235" width="40" height="14" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <rect x="675" y="258" width="80" height="7" rx="2" fill="rgba(255,255,255,0.06)"/>
+  <rect x="675" y="270" width="60" height="7" rx="2" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- ICP highlighted card (center) -->
+  <rect x="310" y="110" width="240" height="160" rx="12" fill="rgba(249,69,46,0.1)" stroke="#F9452E" stroke-width="1.5"/>
+  <!-- Star badge -->
+  <circle cx="430" cy="110" r="14" fill="#F9452E"/>
+  <text x="430" y="115" text-anchor="middle" font-family="sans-serif" font-size="14" fill="white">★</text>
+
+  <!-- ICP card content -->
+  <text x="340" y="145" font-family="sans-serif" font-size="10" fill="rgba(249,69,46,0.8)" letter-spacing="1.5" font-weight="600">IDEAL CUSTOMER</text>
+  <rect x="330" y="155" width="100" height="10" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <rect x="330" y="172" width="160" height="7" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="330" y="185" width="130" height="7" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="330" y="198" width="150" height="7" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="330" y="211" width="110" height="7" rx="2" fill="rgba(255,255,255,0.1)"/>
+
+  <!-- Check marks -->
+  <text x="332" y="172" font-family="sans-serif" font-size="8" fill="#F9452E">✓</text>
+  <text x="332" y="185" font-family="sans-serif" font-size="8" fill="#F9452E">✓</text>
+  <text x="332" y="198" font-family="sans-serif" font-size="8" fill="#F9452E">✓</text>
+  <text x="332" y="211" font-family="sans-serif" font-size="8" fill="#F9452E">✓</text>
+
+  <!-- Magnifying glass -->
+  <circle cx="430" cy="285" r="35" stroke="rgba(249,69,46,0.6)" stroke-width="2.5"/>
+  <circle cx="430" cy="285" r="22" stroke="rgba(249,69,46,0.3)" stroke-width="1.5"/>
+  <line x1="455" y1="310" x2="480" y2="335" stroke="rgba(249,69,46,0.7)" stroke-width="3" stroke-linecap="round"/>
+
+  <text x="48" y="56" font-family="sans-serif" font-size="11" fill="rgba(249,69,46,0.7)" letter-spacing="2" font-weight="600">VENTAS B2B</text>
+  <text x="48" y="345" font-family="sans-serif" font-size="62" fill="rgba(255,255,255,0.04)" font-weight="900" letter-spacing="-2">ICP</text>
+</svg>

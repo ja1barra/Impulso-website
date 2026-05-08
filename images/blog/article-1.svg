@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" fill="none">
+  <rect width="860" height="380" fill="#2C1A17"/>
+  <!-- grid -->
+  <line x1="0" y1="95" x2="860" y2="95" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="190" x2="860" y2="190" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="285" x2="860" y2="285" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="215" y1="0" x2="215" y2="380" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="430" y1="0" x2="430" y2="380" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="645" y1="0" x2="645" y2="380" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Target circles -->
+  <circle cx="430" cy="190" r="140" stroke="rgba(249,69,46,0.12)" stroke-width="1"/>
+  <circle cx="430" cy="190" r="100" stroke="rgba(249,69,46,0.18)" stroke-width="1"/>
+  <circle cx="430" cy="190" r="60" stroke="rgba(249,69,46,0.28)" stroke-width="1.5"/>
+  <circle cx="430" cy="190" r="22" fill="rgba(249,69,46,0.25)" stroke="#F9452E" stroke-width="2"/>
+  <circle cx="430" cy="190" r="6" fill="#F9452E"/>
+
+  <!-- Arrows converging to target -->
+  <!-- Arrow from top-left -->
+  <line x1="200" y1="80" x2="400" y2="168" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="400,168 388,158 395,172" fill="rgba(255,255,255,0.5)"/>
+  <!-- Arrow from top-right -->
+  <line x1="660" y1="80" x2="460" y2="168" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="460,168 472,158 465,172" fill="rgba(255,255,255,0.5)"/>
+  <!-- Arrow from bottom-left -->
+  <line x1="190" y1="310" x2="400" y2="212" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="400,212 388,222 395,208" fill="rgba(255,255,255,0.5)"/>
+  <!-- Arrow from bottom-right -->
+  <line x1="670" y1="310" x2="460" y2="212" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="460,212 472,222 465,208" fill="rgba(255,255,255,0.5)"/>
+  <!-- Arrow from left -->
+  <line x1="100" y1="190" x2="395" y2="190" stroke="rgba(249,69,46,0.5)" stroke-width="2" stroke-dasharray="7,4"/>
+  <polygon points="395,190 380,182 380,198" fill="#F9452E"/>
+
+  <!-- Labels at arrow origins -->
+  <text x="130" y="74" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">ICP</text>
+  <text x="648" y="74" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">CANALES</text>
+  <text x="110" y="326" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">PRICING</text>
+  <text x="638" y="326" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.4)" letter-spacing="1">MOTION</text>
+  <text x="40" y="195" font-family="sans-serif" font-size="10" fill="rgba(249,69,46,0.8)" letter-spacing="1">VALOR</text>
+
+  <!-- Label -->
+  <text x="48" y="56" font-family="sans-serif" font-size="11" fill="rgba(249,69,46,0.7)" letter-spacing="2" font-weight="600">GO-TO-MARKET</text>
+  <text x="48" y="345" font-family="sans-serif" font-size="62" fill="rgba(255,255,255,0.04)" font-weight="900" letter-spacing="-2">STRATEGY</text>
+</svg>
