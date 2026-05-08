@@ -592,139 +592,7 @@
 
   .footer-links a:hover { color: var(--dark); }
 
-  /* ── HIDDEN ARTICLES for modal ── */
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(49,48,54,0.65);
-    z-index: 999;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .modal-overlay.open { display: flex; }
-
-  .modal {
-    background: white;
-    border-radius: 16px;
-    max-width: 720px;
-    width: 100%;
-    max-height: 85vh;
-    overflow-y: auto;
-    position: relative;
-    animation: modalIn 0.3s ease;
-  }
-
-  @keyframes modalIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .modal-header {
-    padding: 2.5rem 2.5rem 0;
-    position: sticky;
-    top: 0;
-    background: white;
-    border-bottom: 0.5px solid var(--border);
-    padding-bottom: 1.25rem;
-    margin-bottom: 0;
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: var(--cream);
-    border: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark);
-  }
-
-  .modal-body {
-    padding: 2rem 2.5rem 2.5rem;
-  }
-
-  .modal-body h1 {
-    font-family: 'Petrov Sans', sans-serif;
-    font-size: 1.75rem;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-    color: var(--dark);
-  }
-
-  .modal-body .modal-meta {
-    font-size: 13px;
-    color: var(--mid);
-    margin-bottom: 1.75rem;
-    padding-bottom: 1.25rem;
-    border-bottom: 0.5px solid var(--border);
-  }
-
-  .modal-body p {
-    font-size: 15px;
-    line-height: 1.75;
-    color: #444;
-    margin-bottom: 1rem;
-  }
-
-  .modal-body h2 {
-    font-family: 'Petrov Sans', sans-serif;
-    font-size: 1.25rem;
-    color: var(--dark);
-    margin: 1.75rem 0 0.6rem;
-  }
-
-  .modal-body ul {
-    padding-left: 1.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .modal-body li {
-    font-size: 15px;
-    line-height: 1.75;
-    color: #444;
-    margin-bottom: 0.35rem;
-  }
-
-  .modal-cta {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 0.5px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .modal-cta p {
-    font-size: 14px;
-    color: var(--mid);
-    margin: 0;
-  }
-
-  .modal-cta a {
-    background: var(--red);
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 8px;
-    white-space: nowrap;
-    transition: opacity 0.2s;
-  }
-
-  .modal-cta a:hover { opacity: 0.88; }
+  /* (modal removed — articles open as full pages) */
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -803,7 +671,7 @@
 
 <!-- ── FEATURED ── -->
 <section class="featured-section">
-  <article class="featured-card" onclick="openPost(0)" style="cursor:pointer;">
+  <article class="featured-card" onclick="location.href='/article.html?id=0'" style="cursor:pointer;">
     <div class="featured-visual cv1">
       <div class="featured-visual-number">01</div>
       <span class="featured-badge">Más reciente</span>
@@ -822,7 +690,7 @@
           Enero 2025
         </span>
       </div>
-      <a class="read-btn" onclick="event.stopPropagation(); openPost(0)">
+      <a class="read-btn" href="/article.html?id=0" onclick="event.stopPropagation()">
         Leer artículo
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
@@ -866,347 +734,27 @@
   </div>
 </footer>
 
-<!-- ── MODAL ── -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal" id="modalContent"></div>
-</div>
-
 <script>
 const posts = [
-  {
-    id: 0,
-    category: 'ventas',
-    categoryLabel: 'Ventas B2B',
-    tagClass: 'tag-ventas',
-    colorClass: 'cv1',
-    title: 'Por qué tu startup tiene producto pero no tiene ventas',
-    fullTitle: 'Por qué tu startup tiene producto pero no tiene ventas: el problema estructural que nadie te dice',
-    excerpt: 'El 70% de las startups tech en México con producto validado no tiene un sistema de ventas. No es un problema de mercado.',
-    date: 'Enero 2025',
-    read: '8 min',
-    featured: true,
-    content: `
-      <p>Si tienes un producto que funciona, clientes que lo usan y aún así las ventas no despegan, tienes un problema de estructura, no de producto.</p>
-      <p>Esto es más común de lo que parece. En México, el 70% de las startups tech con producto validado no cuenta con un sistema de ventas real. Tienen un fundador haciendo demo tras demo, cerrando por relaciones personales, sin pipeline visible ni forecast posible.</p>
-      <h2>El síntoma vs. el diagnóstico</h2>
-      <p>El síntoma es "no hay ventas". El diagnóstico real puede ser cualquiera de estos:</p>
-      <ul>
-        <li>No hay un ICP definido con claridad: le están vendiendo a todos y a nadie.</li>
-        <li>No hay proceso de prospección: las oportunidades llegan por referido o suerte.</li>
-        <li>No hay seguimiento estructurado: leads que entran frío y se enfrían más.</li>
-        <li>No hay narrativa comercial: cada demo es diferente según el humor del día.</li>
-        <li>No hay CRM real: el pipeline vive en la cabeza del founder.</li>
-      </ul>
-      <h2>Por qué los founders técnicos caen en esto</h2>
-      <p>El perfil CTO-founder que construye producto excepcional raramente tiene entrenamiento comercial. La lógica de producto es iterativa, orientada a features. La lógica comercial es sistémica, orientada a conversión. Son músculos diferentes.</p>
-      <p>Y aquí está la trampa: el founder técnico asume que si el producto es bueno, las ventas llegarán solas. En los primeros clientes, eso es parcialmente verdad. Pero para escalar, necesitas sistema, no suerte.</p>
-      <h2>Qué hace diferente a una startup con estructura comercial</h2>
-      <p>Una startup con estructura comercial real tiene: un ICP documentado, un proceso de prospección activo, una narrativa comercial consistente, un CRM con stages claros y un número de pipeline que puede defenderle ante un inversionista.</p>
-      <p>Eso no lo construyes en un día, pero tampoco tarda años. Con el framework correcto, las primeras 8 semanas son suficientes para tener los cimientos.</p>
-    `
-  },
-  {
-    id: 1,
-    category: 'gtm',
-    categoryLabel: 'Go-To-Market',
-    tagClass: 'tag-gtm',
-    colorClass: 'cv2',
-    title: 'Cómo construir tu estrategia Go-To-Market desde cero',
-    fullTitle: 'Cómo construir tu estrategia Go-To-Market desde cero: guía para founders SaaS en México',
-    excerpt: 'GTM no es un deck. Es un sistema operativo que define cómo llegas al mercado, cómo adquieres clientes y cómo escalas sin romper el negocio.',
-    date: 'Enero 2025',
-    read: '10 min',
-    content: `
-      <p>Go-To-Market es una de las frases más usadas y peor ejecutadas del ecosistema startup. La mayoría de los founders la entiende como "la estrategia de lanzamiento". En realidad, GTM es mucho más: es el sistema completo que define cómo tu empresa llega al mercado, adquiere clientes y escala.</p>
-      <h2>Los 5 componentes de un GTM real</h2>
-      <ul>
-        <li><strong>ICP (Ideal Customer Profile):</strong> quién es exactamente el cliente que más valor recibe y más rápido paga.</li>
-        <li><strong>Propuesta de valor única:</strong> qué problema resuelves, para quién y por qué mejor que la alternativa.</li>
-        <li><strong>Canales de adquisición:</strong> cómo llegas a ese ICP de forma predecible y escalable.</li>
-        <li><strong>Modelo de precios:</strong> cómo capturas valor en función del problema que resuelves.</li>
-        <li><strong>Motion de ventas:</strong> el proceso desde el primer contacto hasta el closed-won.</li>
-      </ul>
-      <h2>El error más común: lanzar sin ICP definido</h2>
-      <p>Cuando no tienes un ICP claro, tu GTM se convierte en "le vendemos a cualquier empresa que nos compre". Eso funciona para sobrevivir los primeros meses. Para escalar, es un desastre: el churn sube, el CAC también, y el equipo de ventas no sabe a quién llamar.</p>
-      <h2>Por dónde empezar si tienes 0 clientes</h2>
-      <p>Empieza con hipótesis. Documenta tu ICP hipotético: industria, tamaño de empresa, rol del decisor, problema principal, presupuesto estimado. Luego sal a validar esas hipótesis con 15–20 conversaciones de descubrimiento antes de optimizar cualquier otro elemento del GTM.</p>
-    `
-  },
-  {
-    id: 2,
-    category: 'ventas',
-    categoryLabel: 'Ventas B2B',
-    tagClass: 'tag-ventas',
-    colorClass: 'cv3',
-    title: 'ICP: el documento que toda startup necesita antes de vender',
-    fullTitle: 'ICP: el documento que toda startup necesita antes de intentar vender',
-    excerpt: 'Sin un Ideal Customer Profile documentado, tu equipo de ventas está disparando al aire. Aquí cómo construirlo desde datos reales.',
-    date: 'Febrero 2025',
-    read: '7 min',
-    content: `
-      <p>El ICP (Ideal Customer Profile) es el documento más importante que puede tener una startup antes de lanzar cualquier esfuerzo de ventas o marketing. Y es, también, el más ignorado.</p>
-      <h2>¿Qué es realmente un ICP?</h2>
-      <p>No es un "buyer persona" con nombre ficticio y foto de stock. El ICP es una descripción precisa del tipo de empresa que más valor recibe de tu producto, que tiene mayor propensión a comprar, que tiene menor costo de adquisición y que tiene mayor probabilidad de retención.</p>
-      <h2>Las variables que debe incluir tu ICP</h2>
-      <ul>
-        <li>Industria o vertical específica</li>
-        <li>Tamaño de empresa (empleados y/o revenue)</li>
-        <li>Madurez tecnológica</li>
-        <li>Rol del decisor de compra</li>
-        <li>Dolor principal que experimenta</li>
-        <li>Señales de trigger de compra</li>
-        <li>Presupuesto promedio disponible</li>
-        <li>Ciclo de compra típico</li>
-      </ul>
-      <h2>Cómo construirlo si eres early-stage</h2>
-      <p>Si ya tienes 3–5 clientes, analiza patrones: ¿qué tienen en común los que más usan el producto? ¿Los que pagaron más rápido? ¿Los que referenciaron a otro cliente? Esos son tus clientes estrella, y de ahí salen las variables de tu ICP.</p>
-      <p>Si aún no tienes clientes, construye el ICP como hipótesis y ve a validarlo con conversaciones. 15 entrevistas de descubrimiento te darán más claridad que cualquier framework teórico.</p>
-    `
-  },
-  {
-    id: 3,
-    category: 'ops',
-    categoryLabel: 'Operaciones',
-    tagClass: 'tag-ops',
-    colorClass: 'cv4',
-    title: 'Cómo estructurar tu CRM cuando eres un equipo de 1 o 2 personas',
-    fullTitle: 'Cómo estructurar tu CRM cuando eres un equipo de 1 o 2 personas: lo mínimo viable que sí funciona',
-    excerpt: 'Un CRM no es solo un software. Es la arquitectura de tu proceso comercial. Te mostramos cómo configurarlo para no perderte en la operación.',
-    date: 'Febrero 2025',
-    read: '6 min',
-    content: `
-      <p>El error más común cuando un founder configura su CRM: copiar la estructura de una empresa grande que no se parece en nada a su realidad operativa.</p>
-      <h2>Los 5 stages que necesita tu pipeline</h2>
-      <ul>
-        <li><strong>Lead:</strong> contacto identificado dentro de tu ICP, sin contacto aún.</li>
-        <li><strong>Contactado:</strong> primer alcance enviado, esperando respuesta.</li>
-        <li><strong>Calificado:</strong> hubo conversación y confirmó que hay problema y presupuesto.</li>
-        <li><strong>Propuesta:</strong> enviaste pricing o propuesta formal.</li>
-        <li><strong>Closed (Won / Lost):</strong> decisión tomada.</li>
-      </ul>
-      <h2>Qué no incluir en tu CRM de early stage</h2>
-      <p>Omite campos que no vas a llenar. Cada campo vacío es deuda cognitiva. Empieza con empresa, contacto, stage, próxima acción y fecha. Eso es suficiente para los primeros 50 deals.</p>
-      <h2>La regla de las 24 horas</h2>
-      <p>Cualquier interacción con un prospecto debe quedar registrada en el CRM en menos de 24 horas. Si no lo registras, no existe. Y si no existe, no puedes optimizar.</p>
-    `
-  },
-  {
-    id: 4,
-    category: 'saas',
-    categoryLabel: 'SaaS',
-    tagClass: 'tag-saas',
-    colorClass: 'cv5',
-    title: 'Métricas SaaS que todo founder debe conocer antes de hablar con un inversionista',
-    fullTitle: 'Las métricas SaaS que todo founder debe conocer antes de hablar con un inversionista',
-    excerpt: 'MRR, ARR, CAC, LTV, Churn, NRR. No son acrónimos de moda: son el lenguaje con el que vas a defender tu negocio.',
-    date: 'Marzo 2025',
-    read: '9 min',
-    content: `
-      <p>Cuando entras a una sala con un inversionista y no sabes tu CAC:LTV, el meeting termina antes de empezar. No porque eres malo en tu negocio, sino porque no hablas el idioma.</p>
-      <h2>Las 6 métricas que no pueden faltarte</h2>
-      <ul>
-        <li><strong>MRR (Monthly Recurring Revenue):</strong> el ingreso recurrente mensual. Es el pulso de tu negocio.</li>
-        <li><strong>ARR (Annual Recurring Revenue):</strong> MRR × 12. Útil para conversaciones de fundraising.</li>
-        <li><strong>CAC (Customer Acquisition Cost):</strong> cuánto te cuesta adquirir un nuevo cliente. Incluye ventas, marketing y tiempo del founder.</li>
-        <li><strong>LTV (Lifetime Value):</strong> cuánto revenue genera un cliente durante toda su relación contigo.</li>
-        <li><strong>Churn Rate:</strong> el porcentaje de clientes o revenue que pierdes cada mes. Un SaaS saludable tiene menos del 2% mensual.</li>
-        <li><strong>NRR (Net Revenue Retention):</strong> mide si tus clientes actuales gastan más o menos con el tiempo. Por encima del 100% es señal de expansion revenue.</li>
-      </ul>
-      <h2>La relación más importante: CAC:LTV</h2>
-      <p>La regla general es que el LTV debe ser al menos 3 veces el CAC. Si el LTV:CAC es menor a 3:1, tu negocio está adquiriendo clientes a pérdida o en el límite del break-even.</p>
-    `
-  },
-  {
-    id: 5,
-    category: 'ventas',
-    categoryLabel: 'Ventas B2B',
-    tagClass: 'tag-ventas',
-    colorClass: 'cv6',
-    title: 'Cómo hacer outreach en LinkedIn sin sonar a spam',
-    fullTitle: 'Cómo hacer outreach en LinkedIn sin sonar a spam: el framework que usamos con startups tech',
-    excerpt: 'El 90% de los mensajes de prospección en LinkedIn son ignorados. No porque el canal no funcione, sino porque el mensaje está mal construido.',
-    date: 'Marzo 2025',
-    read: '7 min',
-    content: `
-      <p>LinkedIn es el canal de adquisición B2B más eficiente para startups tech en México en este momento. Pero el 90% de los mensajes que se envían son ignorados. El problema no es el canal: es el mensaje.</p>
-      <h2>Los 3 errores que destruyen tu tasa de respuesta</h2>
-      <ul>
-        <li>Empezar con "Hola, soy de [empresa] y ofrecemos [servicio]..." — nadie le importa tu empresa antes de saber qué ganan ellos.</li>
-        <li>Mensajes genéricos sin personalización visible — el prospecto sabe que es copy-paste.</li>
-        <li>Pedir una reunión en el primer mensaje — es el equivalente a pedir matrimonio en la primera cita.</li>
-      </ul>
-      <h2>El framework VAPA para mensajes de outreach</h2>
-      <ul>
-        <li><strong>V — Valor específico:</strong> Menciona algo concreto del perfil del prospecto que muestre que lo investigaste.</li>
-        <li><strong>A — Ángulo relevante:</strong> Conecta ese detalle con el problema que resuelves.</li>
-        <li><strong>P — Prueba:</strong> Un dato, caso de éxito o resultado que valide tu credibilidad.</li>
-        <li><strong>A — Acción mínima:</strong> Pide algo pequeño, no una reunión. Una respuesta de sí/no.</li>
-      </ul>
-      <h2>Un ejemplo que convierte</h2>
-      <p>"Vi que [empresa] está expandiendo su equipo de ventas en LinkedIn. Trabajamos con 3 startups SaaS en etapa similar y en promedio redujeron su ciclo de ventas en 40% en 60 días. ¿Tiene sentido conectar brevemente para ver si aplica a su caso?"</p>
-    `
-  },
-  {
-    id: 6,
-    category: 'gtm',
-    categoryLabel: 'Go-To-Market',
-    tagClass: 'tag-gtm',
-    colorClass: 'cv7',
-    title: 'Pricing para SaaS en México: cómo fijar el precio sin subestimarte',
-    fullTitle: 'Pricing para SaaS en México: cómo fijar el precio sin subestimarte ni perder deals',
-    excerpt: 'El precio no es solo un número. Es un posicionamiento. La mayoría de los founders tech en México cobran menos de lo que deberían.',
-    date: 'Abril 2025',
-    read: '8 min',
-    content: `
-      <p>El pricing es una de las decisiones más importantes y más improvisadas en el journey de una startup. La mayoría de los founders en México eligen precio por intuición, miedo o por copiar al competidor más cercano.</p>
-      <h2>Por qué el miedo al precio destruye tu negocio</h2>
-      <p>Cuando cobras poco por miedo al rechazo, envías señales negativas al mercado: que tu producto no vale lo que dices que vale, que no confías en el problema que resuelves y que cualquiera con un Excel puede reemplazarte.</p>
-      <h2>Los 3 modelos de pricing para SaaS</h2>
-      <ul>
-        <li><strong>Por usuario/seat:</strong> simple y predecible. Funciona bien cuando el valor crece con el número de usuarios.</li>
-        <li><strong>Por uso (usage-based):</strong> el cliente paga en función de lo que consume. Reduce la barrera de entrada pero puede hacer el revenue menos predecible.</li>
-        <li><strong>Por valor/outcome:</strong> el precio está ligado al resultado que obtienes. Es el más poderoso y el más difícil de implementar.</li>
-      </ul>
-      <h2>Cómo saber si estás dejando dinero en la mesa</h2>
-      <p>Si en tus demos nadie pregunta por el precio y todos dicen que sí en el primer intento, probablemente estás cobrando poco. Una tasa de rechazo del 20–30% por precio es señal de que el pricing está calibrado correctamente.</p>
-    `
-  },
-  {
-    id: 7,
-    category: 'mindset',
-    categoryLabel: 'Mindset',
-    tagClass: 'tag-mindset',
-    colorClass: 'cv8',
-    title: 'El síndrome del fundador todólogo y cómo salir de él',
-    fullTitle: 'El síndrome del fundador todólogo: por qué hacer todo tú mismo frena tu crecimiento',
-    excerpt: 'Ser el CEO, CTO, vendedor, diseñador y soporte al mismo tiempo no es señal de dedicación. Es señal de que no tienes estructura.',
-    date: 'Abril 2025',
-    read: '6 min',
-    content: `
-      <p>Si eres el fundador de una startup y eres responsable de ventas, producto, operaciones, soporte y finanzas al mismo tiempo, tienes un problema de estructura, no de tiempo.</p>
-      <h2>Por qué el todólogo es un cuello de botella</h2>
-      <p>Cuando todo pasa por ti, el crecimiento tiene un techo: tu capacidad de procesar. Eso no escala. Y lo peor: cuando estás apagando incendios operativos, no tienes tiempo para hacer lo que solo tú puedes hacer: visión, relaciones estratégicas y decisiones críticas.</p>
-      <h2>Las 3 áreas que debes delegar primero</h2>
-      <ul>
-        <li><strong>Soporte reactivo:</strong> responder tickets, dudas básicas de clientes. Esto puede ser automatizado o delegado en semanas.</li>
-        <li><strong>Administración operativa:</strong> facturas, reportes, agenda. El ROI de delegar esto es inmediato.</li>
-        <li><strong>Prospección outbound:</strong> el founder debe cerrar deals, no prospectar manualmente en LinkedIn 8 horas al día.</li>
-      </ul>
-      <h2>Cuándo saber que ya no eres el cuello de botella</h2>
-      <p>Cuando puedes desaparecer una semana y el negocio no para. Ese es el objetivo de tener estructura: que la operación funcione sin depender de tu presencia constante.</p>
-    `
-  },
-  {
-    id: 8,
-    category: 'ops',
-    categoryLabel: 'Operaciones',
-    tagClass: 'tag-ops',
-    colorClass: 'cv9',
-    title: 'SOPs para startups: cómo documentar tu operación sin morir en el intento',
-    fullTitle: 'SOPs para startups: cómo documentar tu operación sin morir en el intento',
-    excerpt: 'Los Procedimientos Operativos Estándar no son burocracia corporativa. Son la diferencia entre un negocio que depende de ti y uno que puede escalar.',
-    date: 'Mayo 2025',
-    read: '7 min',
-    content: `
-      <p>La palabra "procedimiento" asusta a los founders. Suena a corporativo, lento y burocrático. Pero un SOP bien construido es exactamente lo opuesto: es libertad operativa.</p>
-      <h2>¿Qué es un SOP y por qué lo necesitas?</h2>
-      <p>Un SOP (Standard Operating Procedure) es simplemente una descripción paso a paso de cómo se ejecuta un proceso en tu empresa. Puede ser tan simple como "cómo onboardear un nuevo cliente" o tan complejo como "cómo ejecutar una campaña de outreach".</p>
-      <h2>Los 5 SOPs que toda startup debe tener primero</h2>
-      <ul>
-        <li>SOP 01 — Proceso de Ventas y Cierre</li>
-        <li>SOP 02 — Onboarding de Nuevos Clientes</li>
-        <li>SOP 03 — Entrega del Servicio / Producto</li>
-        <li>SOP 04 — Seguimiento y Retención</li>
-        <li>SOP 05 — Operaciones Internas y Reportes</li>
-      </ul>
-      <h2>El formato que funciona</h2>
-      <p>No necesitas un documento de 30 páginas. Un SOP efectivo tiene: objetivo del proceso, quién es responsable, pasos numerados con detalle suficiente para que alguien nuevo lo ejecute, herramientas usadas y métricas de éxito. Eso es todo.</p>
-    `
-  },
-  {
-    id: 9,
-    category: 'saas',
-    categoryLabel: 'SaaS',
-    tagClass: 'tag-saas',
-    colorClass: 'cv10',
-    title: 'Demand Generation para SaaS B2B: qué funciona en México en 2025',
-    fullTitle: 'Demand Generation para SaaS B2B: qué canales realmente funcionan en México en 2025',
-    excerpt: 'Antes de invertir en paid ads, necesitas entender cuál es el canal de adquisición correcto para tu etapa, tu ICP y tu presupuesto.',
-    date: 'Mayo 2025',
-    read: '9 min',
-    content: `
-      <p>Demand generation no es solo publicidad. Es el conjunto de actividades que crean conciencia y demanda para tu producto en el mercado. Y en México B2B, hay canales que funcionan y canales que queman presupuesto.</p>
-      <h2>El mapa de canales por etapa</h2>
-      <ul>
-        <li><strong>0–10 clientes (Pre-PMF):</strong> Outreach directo en LinkedIn, red de contactos, referidos. Nada más.</li>
-        <li><strong>10–50 clientes (Early Growth):</strong> Contenido orgánico en LinkedIn, outreach estructurado, partnerships estratégicos.</li>
-        <li><strong>50+ clientes (Scale):</strong> Paid ads, SEO, eventos de industria, inbound con contenido.</li>
-      </ul>
-      <h2>Por qué los paid ads matan a las startups early-stage</h2>
-      <p>Si arrancas con paid ads antes de tener un proceso de ventas estructurado, estás comprando leads que no sabes cerrar. El CAC se dispara, el equipo se frustra y el presupuesto desaparece sin resultados visibles.</p>
-      <h2>El canal más subestimado en México: LinkedIn outbound</h2>
-      <p>Para B2B SaaS dirigido a empresas de 10–200 empleados en México, el LinkedIn outbound estructurado sigue siendo el canal con mejor ROI para etapas tempranas. No porque sea mágico, sino porque permite hiperpersonalización y control del ICP.</p>
-    `
-  },
-  {
-    id: 10,
-    category: 'gtm',
-    categoryLabel: 'Go-To-Market',
-    tagClass: 'tag-gtm',
-    colorClass: 'cv11',
-    title: 'Cómo escribir una propuesta comercial que cierra deals',
-    fullTitle: 'Cómo escribir una propuesta comercial que cierra deals: estructura y errores comunes',
-    excerpt: 'Una propuesta comercial no es un menú de precios. Es el documento donde transformas la conversación en compromiso.',
-    date: 'Junio 2025',
-    read: '6 min',
-    content: `
-      <p>La mayoría de las propuestas comerciales de startups parecen más un listado de features que un documento de ventas. El resultado: prospectos confundidos, decisiones postergadas y deals perdidos.</p>
-      <h2>La estructura que funciona</h2>
-      <ul>
-        <li><strong>Diagnóstico:</strong> Refleja el problema del cliente con sus propias palabras. Demuestra que entendiste.</li>
-        <li><strong>Solución propuesta:</strong> Describe qué vas a hacer específicamente, no solo qué ofreces.</li>
-        <li><strong>Resultados esperados:</strong> Qué cambia para ellos. Cuantificable si es posible.</li>
-        <li><strong>Inversión:</strong> Precio claro, sin ambigüedades. Si hay opciones, máximo 3.</li>
-        <li><strong>Próximos pasos:</strong> Qué pasa si dicen sí. Elimina la fricción de la decisión.</li>
-      </ul>
-      <h2>El error más común: enviar la propuesta sin contexto</h2>
-      <p>Una propuesta enviada por email sin una llamada de presentación tiene una tasa de cierre 60–70% menor que una presentada en persona o en video. Si mandas un PDF y esperas, estás dejando el deal al azar.</p>
-    `
-  },
-  {
-    id: 11,
-    category: 'mindset',
-    categoryLabel: 'Mindset',
-    tagClass: 'tag-mindset',
-    colorClass: 'cv12',
-    title: 'Revenue predecible: el objetivo real de cualquier startup que quiere escalar',
-    fullTitle: 'Revenue predecible: por qué es el objetivo real de cualquier startup que quiere escalar',
-    excerpt: 'El MRR inconsistente no es una etapa temporal. Es una señal de que tu sistema comercial tiene huecos que se irán haciendo más grandes.',
-    date: 'Junio 2025',
-    read: '7 min',
-    content: `
-      <p>Hay startups que cierran 3 deals en enero, 0 en febrero, 5 en marzo y 1 en abril. Eso no es crecimiento. Es caos con momentos de suerte. Y esa inconsistencia tiene un costo: es imposible planear, contratar, invertir o levantar capital cuando no sabes qué va a pasar el próximo mes.</p>
-      <h2>Qué hace predecible al revenue</h2>
-      <p>El revenue predecible no viene de trabajar más horas. Viene de tener un sistema donde cada input genera outputs calculables. Eso significa:</p>
-      <ul>
-        <li>Sabes cuántos leads entran al pipeline por semana.</li>
-        <li>Sabes qué porcentaje de esos leads se convierten en calificados.</li>
-        <li>Sabes cuánto tiempo tarda en cerrar un deal.</li>
-        <li>Sabes cuál es tu ticket promedio.</li>
-      </ul>
-      <h2>El forecast simple que todo founder puede hacer</h2>
-      <p>Con esas 4 variables puedes construir un forecast básico: si tienes 20 leads en pipeline, conviertes el 25% y el ticket promedio es $5,000, tu cierre esperado de este mes es $25,000. No es exacto, pero es un número que puedes defender y mejorar.</p>
-      <h2>El sistema como ventaja competitiva</h2>
-      <p>Cuando tienes revenue predecible, puedes contratar con confianza, hacer compromisos con clientes y tomar decisiones de producto basadas en datos, no en intuición. Ese es el salto de improvising a operating.</p>
-    `
-  }
+  { id: 0,  category: 'ventas',  categoryLabel: 'Ventas B2B',      tagClass: 'tag-ventas',  colorClass: 'cv1',  title: 'Por qué tu startup tiene producto pero no tiene ventas',                        excerpt: 'El 70% de las startups tech en México con producto validado no tiene un sistema de ventas. No es un problema de mercado.',                                          date: 'Enero 2025',  read: '8 min',  featured: true },
+  { id: 1,  category: 'gtm',     categoryLabel: 'Go-To-Market',    tagClass: 'tag-gtm',     colorClass: 'cv2',  title: 'Cómo construir tu estrategia Go-To-Market desde cero',                         excerpt: 'GTM no es un deck. Es un sistema operativo que define cómo llegas al mercado, cómo adquieres clientes y cómo escalas sin romper el negocio.',                        date: 'Enero 2025',  read: '10 min' },
+  { id: 2,  category: 'ventas',  categoryLabel: 'Ventas B2B',      tagClass: 'tag-ventas',  colorClass: 'cv3',  title: 'ICP: el documento que toda startup necesita antes de vender',                  excerpt: 'Sin un Ideal Customer Profile documentado, tu equipo de ventas está disparando al aire. Aquí cómo construirlo desde datos reales.',                                  date: 'Febrero 2025', read: '7 min' },
+  { id: 3,  category: 'ops',     categoryLabel: 'Operaciones',     tagClass: 'tag-ops',     colorClass: 'cv4',  title: 'Cómo estructurar tu CRM cuando eres un equipo de 1 o 2 personas',              excerpt: 'Un CRM no es solo un software. Es la arquitectura de tu proceso comercial. Te mostramos cómo configurarlo para no perderte en la operación.',                        date: 'Febrero 2025', read: '6 min' },
+  { id: 4,  category: 'saas',    categoryLabel: 'SaaS',            tagClass: 'tag-saas',    colorClass: 'cv5',  title: 'Métricas SaaS que todo founder debe conocer antes de hablar con un inversionista', excerpt: 'MRR, ARR, CAC, LTV, Churn, NRR. No son acrónimos de moda: son el lenguaje con el que vas a defender tu negocio.',                                                  date: 'Marzo 2025',  read: '9 min' },
+  { id: 5,  category: 'ventas',  categoryLabel: 'Ventas B2B',      tagClass: 'tag-ventas',  colorClass: 'cv6',  title: 'Cómo hacer outreach en LinkedIn sin sonar a spam',                             excerpt: 'El 90% de los mensajes de prospección en LinkedIn son ignorados. No porque el canal no funcione, sino porque el mensaje está mal construido.',                        date: 'Marzo 2025',  read: '7 min' },
+  { id: 6,  category: 'gtm',     categoryLabel: 'Go-To-Market',    tagClass: 'tag-gtm',     colorClass: 'cv7',  title: 'Pricing para SaaS en México: cómo fijar el precio sin subestimarte',            excerpt: 'El precio no es solo un número. Es un posicionamiento. La mayoría de los founders tech en México cobran menos de lo que deberían.',                                  date: 'Abril 2025',  read: '8 min' },
+  { id: 7,  category: 'mindset', categoryLabel: 'Mindset',         tagClass: 'tag-mindset', colorClass: 'cv8',  title: 'El síndrome del fundador todólogo y cómo salir de él',                         excerpt: 'Ser el CEO, CTO, vendedor, diseñador y soporte al mismo tiempo no es señal de dedicación. Es señal de que no tienes estructura.',                                    date: 'Abril 2025',  read: '6 min' },
+  { id: 8,  category: 'ops',     categoryLabel: 'Operaciones',     tagClass: 'tag-ops',     colorClass: 'cv9',  title: 'SOPs para startups: cómo documentar tu operación sin morir en el intento',    excerpt: 'Los Procedimientos Operativos Estándar no son burocracia corporativa. Son la diferencia entre un negocio que depende de ti y uno que puede escalar.',               date: 'Mayo 2025',   read: '7 min' },
+  { id: 9,  category: 'saas',    categoryLabel: 'SaaS',            tagClass: 'tag-saas',    colorClass: 'cv10', title: 'Demand Generation para SaaS B2B: qué funciona en México en 2025',              excerpt: 'Antes de invertir en paid ads, necesitas entender cuál es el canal de adquisición correcto para tu etapa, tu ICP y tu presupuesto.',                                 date: 'Mayo 2025',   read: '9 min' },
+  { id: 10, category: 'gtm',     categoryLabel: 'Go-To-Market',    tagClass: 'tag-gtm',     colorClass: 'cv11', title: 'Cómo escribir una propuesta comercial que cierra deals',                       excerpt: 'Una propuesta comercial no es un menú de precios. Es el documento donde transformas la conversación en compromiso.',                                                 date: 'Junio 2025',  read: '6 min' },
+  { id: 11, category: 'mindset', categoryLabel: 'Mindset',         tagClass: 'tag-mindset', colorClass: 'cv12', title: 'Revenue predecible: el objetivo real de cualquier startup que quiere escalar', excerpt: 'El MRR inconsistente no es una etapa temporal. Es una señal de que tu sistema comercial tiene huecos que se irán haciendo más grandes.',                           date: 'Junio 2025',  read: '7 min' }
 ];
 
 function renderCards(filter = 'all') {
   const grid = document.getElementById('postsGrid');
   const filtered = filter === 'all' ? posts : posts.filter(p => p.category === filter);
   grid.innerHTML = filtered.map(p => `
-    <article class="post-card" onclick="openPost(${p.id})" data-cat="${p.category}">
+    <article class="post-card" onclick="location.href='/article.html?id=${p.id}'" data-cat="${p.category}">
       <div class="card-visual ${p.colorClass}">
         <span class="card-visual-num">${String(p.id + 1).padStart(2,'0')}</span>
       </div>
@@ -1228,36 +776,6 @@ function filterPosts(cat, btn) {
   btn.classList.add('active');
   renderCards(cat);
 }
-
-function openPost(id) {
-  const p = posts[id];
-  document.getElementById('modalContent').innerHTML = `
-    <div class="modal-header">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <span class="post-category">${p.categoryLabel}</span>
-    </div>
-    <div class="modal-body">
-      <h1>${p.fullTitle}</h1>
-      <div class="modal-meta">${p.date} · ${p.read} de lectura · Impulso Emprendedor by Integro</div>
-      ${p.content}
-      <div class="modal-cta">
-        <p>¿Tu startup necesita estructura comercial? Podemos ayudarte.</p>
-        <a href="/#contacto">Agendar conversación →</a>
-      </div>
-    </div>
-  `;
-  document.getElementById('modalOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(e) {
-  if (!e || e.target === document.getElementById('modalOverlay')) {
-    document.getElementById('modalOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 function handleSubscribe(btn) {
   btn.textContent = '¡Suscrito! Te escribimos el próximo viernes.';
