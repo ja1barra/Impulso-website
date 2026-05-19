@@ -9,10 +9,31 @@
   },
   "rewrites": [
     { "source": "/servicios", "destination": "/servicios.html" },
-    { "source": "/blog", "destination": "/blog.html" }
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/blog/startup-sin-ventas", "destination": "/blog/startup-sin-ventas.html" },
+    { "source": "/blog/estrategia-go-to-market-saas-mexico", "destination": "/blog/estrategia-go-to-market-saas-mexico.html" },
+    { "source": "/blog/icp-startup-ventas", "destination": "/blog/icp-startup-ventas.html" },
+    { "source": "/blog/crm-startup-equipo-pequeno", "destination": "/blog/crm-startup-equipo-pequeno.html" },
+    { "source": "/blog/metricas-saas-inversionista", "destination": "/blog/metricas-saas-inversionista.html" },
+    { "source": "/blog/outreach-linkedin-sin-spam", "destination": "/blog/outreach-linkedin-sin-spam.html" },
+    { "source": "/blog/pricing-saas-mexico", "destination": "/blog/pricing-saas-mexico.html" },
+    { "source": "/blog/sindrome-founder-todologo", "destination": "/blog/sindrome-founder-todologo.html" },
+    { "source": "/blog/sops-startup-documentar-operacion", "destination": "/blog/sops-startup-documentar-operacion.html" },
+    { "source": "/blog/demand-generation-saas-b2b-mexico", "destination": "/blog/demand-generation-saas-b2b-mexico.html" },
+    { "source": "/blog/propuesta-comercial-que-cierra", "destination": "/blog/propuesta-comercial-que-cierra.html" },
+    { "source": "/blog/revenue-predecible-startup-escala", "destination": "/blog/revenue-predecible-startup-escala.html" }
   ],
   "redirects": [
     { "source": "/servicios/", "destination": "/servicios", "permanent": true },
-    { "source": "/blog/", "destination": "/blog", "permanent": true }
+    { "source": "/blog/", "destination": "/blog", "permanent": true },
+    { "source": "/article.html", "destination": "/blog", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/blog/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+      ]
+    }
   ]
 }
