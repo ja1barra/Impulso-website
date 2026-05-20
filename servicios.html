@@ -252,6 +252,42 @@
       color: var(--white);
     }
 
+    .service-card.coming-soon {
+      opacity: 0.6;
+      pointer-events: none;
+      position: relative;
+    }
+    .service-card.coming-soon::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff8e6;
+      border: 1px solid #f0c040;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #8a6000;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      white-space: nowrap;
+    }
+    .coming-soon-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #f0a500;
+      flex-shrink: 0;
+    }
+
     .service-content h2 {
       font-size: 1.9rem;
       font-weight: 800;
@@ -895,10 +931,11 @@
         </div>
       </div>
 
-      <div class="service-card fade-up" style="transition-delay:0.2s;">
+      <div class="service-card coming-soon fade-up" style="transition-delay:0.2s;">
         <div class="service-tier">
           <img src="Impulso Escala.png" alt="Impulso Escala" class="service-tier-img" />
           <div class="service-tier-badge">Escala</div>
+          <div class="coming-soon-badge">Próximamente</div>
         </div>
         <div class="service-content">
           <h2>Impulso Escala</h2>
@@ -908,10 +945,11 @@
         </div>
       </div>
 
-      <div class="service-card fade-up" style="transition-delay:0.25s;">
+      <div class="service-card coming-soon fade-up" style="transition-delay:0.25s;">
         <div class="service-tier">
           <img src="Impulso Aceleradora.png" alt="Impulso Aceleradora" class="service-tier-img" />
           <div class="service-tier-badge">Aceleradora</div>
+          <div class="coming-soon-badge">Próximamente</div>
         </div>
         <div class="service-content">
           <h2>Impulso Aceleradora</h2>
