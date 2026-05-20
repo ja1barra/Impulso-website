@@ -1248,7 +1248,7 @@
       flex-direction: column;
       justify-content: center;
       padding: 48px 5%;
-      overflow: hidden;
+      overflow: visible;
     }
     .framework-v2 .framework-inner {
       max-width: 1280px;
@@ -1445,9 +1445,49 @@
       50%      { opacity: 1; transform: scale(1.4); }
     }
 
+    /* ── Breakpoint: viewport corto (ventana no maximizada, laptop 768px h, etc.) ── */
+    @media (max-height: 760px) and (min-width: 901px) {
+      .framework-track { height: auto; }
+      .framework-sticky {
+        position: relative;
+        height: auto;
+        padding: 56px 5%;
+        overflow: visible;
+      }
+      .framework-v2 .section-title { font-size: 2rem; margin-bottom: 6px; }
+      .framework-v2 .section-lead { margin-bottom: 10px; }
+      .framework-timeline { height: 52px; margin: 0 0 12px; }
+      .layer-stage,
+      .layer-stage[data-active="0"],
+      .layer-stage[data-active="1"],
+      .layer-stage[data-active="2"],
+      .layer-stage[data-active="3"] {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 0;
+        gap: 10px;
+      }
+      .layer-card .layer-body { opacity: 1; transform: none; pointer-events: auto; }
+      .layer-card .layer-title,
+      .layer-card.active .layer-title { font-size: 1.2rem; margin-bottom: 8px; }
+      .layer-card .layer-desc { font-size: 0.88rem; margin-bottom: 8px; }
+      .layer-progress-hint { display: none; }
+    }
+
+    /* ── Breakpoint: anchos medios (tablet landscape, ventana parcial) ── */
+    @media (min-width: 901px) and (max-width: 1140px) {
+      .framework-sticky { padding: 36px 5%; }
+      .framework-v2 .section-title { font-size: 2.1rem; margin-bottom: 6px; }
+      .framework-v2 .section-lead { margin-bottom: 10px; }
+      .framework-timeline { height: 52px; margin: 0 0 10px; }
+      .layer-stage { min-height: 260px; }
+      .layer-card.active .layer-title { font-size: 1.45rem; }
+    }
+
+    /* ── Breakpoint: móvil / pantalla angosta ── */
     @media (max-width: 900px) {
       .framework-track { height: auto; }
-      .framework-sticky { position: relative; height: auto; padding: 70px 5%; }
+      .framework-sticky { position: relative; height: auto; padding: 60px 5%; overflow: visible; }
       .layer-stage,
       .layer-stage[data-active="0"],
       .layer-stage[data-active="1"],
@@ -1461,8 +1501,8 @@
       .layer-card,
       .layer-card.active { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.10); }
       .layer-card.active { background: rgba(249,69,46,0.10); border-color: var(--red); }
-      .layer-card .layer-title { font-size: 1.4rem; margin-bottom: 14px; }
-      .layer-card.active .layer-title { font-size: 1.5rem; }
+      .layer-card .layer-title { font-size: 1.3rem; margin-bottom: 10px; }
+      .layer-card.active .layer-title { font-size: 1.4rem; }
       .layer-card .layer-body { opacity: 1; transform: none; pointer-events: auto; }
       .framework-timeline { display: none; }
       .layer-progress-hint { display: none; }
@@ -2106,7 +2146,7 @@
           // Animate the line from node 0 to current node
           const targetX = TIMELINE_X[idx];
           progressLine.setAttribute('x2', targetX);
-          const drawn = targetX - 40;
+          const drawn = targetX - TIMELINE_X[0];
           progressLine.style.strokeDashoffset = TIMELINE_LEN - drawn;
         }
       };
