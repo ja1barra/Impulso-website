@@ -1343,19 +1343,17 @@
       letter-spacing: 0.12em;
       margin-bottom: 10px;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     .layer-card .layer-title {
       font-size: 1.25rem;
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.15;
       color: var(--white);
       letter-spacing: -0.01em;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
       transform-origin: left top;
       transition:
         font-size 0.55s cubic-bezier(.22,.61,.36,1),
@@ -1682,24 +1680,24 @@
 
           <!-- Timeline SVG -->
           <svg class="framework-timeline" viewBox="0 0 800 64" preserveAspectRatio="none" aria-hidden="true">
-            <line class="tl-track" x1="40" y1="22" x2="760" y2="22" stroke-width="2" stroke-dasharray="3 5"/>
-            <line class="tl-progress" x1="40" y1="22" x2="40" y2="22"
-                  stroke-width="3" stroke-dasharray="720" stroke-dashoffset="720"/>
+            <line class="tl-track" x1="80" y1="22" x2="720" y2="22" stroke-width="2" stroke-dasharray="3 5"/>
+            <line class="tl-progress" x1="80" y1="22" x2="80" y2="22"
+                  stroke-width="3" stroke-dasharray="640" stroke-dashoffset="640"/>
             <g data-tl-index="0">
-              <circle class="tl-node active" cx="40"  cy="22" r="9"/>
-              <text class="tl-label active" x="40"  y="52" text-anchor="middle">01 CLARIDAD</text>
+              <circle class="tl-node active" cx="80"  cy="22" r="9"/>
+              <text class="tl-label active" x="80"  y="52" text-anchor="middle">01 CLARIDAD</text>
             </g>
             <g data-tl-index="1">
-              <circle class="tl-node" cx="280" cy="22" r="9"/>
-              <text class="tl-label" x="280" y="52" text-anchor="middle">02 ESTRUCTURA</text>
+              <circle class="tl-node" cx="293" cy="22" r="9"/>
+              <text class="tl-label" x="293" y="52" text-anchor="middle">02 ESTRUCTURA</text>
             </g>
             <g data-tl-index="2">
-              <circle class="tl-node" cx="520" cy="22" r="9"/>
-              <text class="tl-label" x="520" y="52" text-anchor="middle">03 EJECUCIÓN</text>
+              <circle class="tl-node" cx="507" cy="22" r="9"/>
+              <text class="tl-label" x="507" y="52" text-anchor="middle">03 EJECUCIÓN</text>
             </g>
             <g data-tl-index="3">
-              <circle class="tl-node" cx="760" cy="22" r="9"/>
-              <text class="tl-label" x="760" y="52" text-anchor="middle">04 OPTIMIZACIÓN</text>
+              <circle class="tl-node" cx="720" cy="22" r="9"/>
+              <text class="tl-label" x="720" y="52" text-anchor="middle">04 OPTIMIZACIÓN</text>
             </g>
           </svg>
 
@@ -2087,8 +2085,8 @@
       const nodes = Array.from(document.querySelectorAll('.framework-timeline .tl-node'));
       const labels = Array.from(document.querySelectorAll('.framework-timeline .tl-label'));
       const progressLine = document.querySelector('.framework-timeline .tl-progress');
-      const TIMELINE_X = [40, 280, 520, 760];
-      const TIMELINE_LEN = 720; // 760-40
+      const TIMELINE_X = [80, 293, 507, 720];
+      const TIMELINE_LEN = 640; // 720-80
 
       let manualLockUntil = 0;
       let activeIdx = 0;
