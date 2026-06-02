@@ -852,7 +852,8 @@ const posts = [
   { id: 8, slug: 'sops-startup-documentar-operacion',  category: 'ops',     categoryLabel: 'Operaciones',     tagClass: 'tag-ops',     colorClass: 'cv9',  title: 'SOPs para startups: cómo documentar tu operación sin morir en el intento',    excerpt: 'Los Procedimientos Operativos Estándar no son burocracia corporativa. Son la diferencia entre un negocio que depende de ti y uno que puede escalar.',               date: 'Mayo 2025',   read: '7 min' },
   { id: 9, slug: 'demand-generation-saas-b2b-mexico',  category: 'saas',    categoryLabel: 'SaaS',            tagClass: 'tag-saas',    colorClass: 'cv10', title: 'Demand Generation para SaaS B2B: qué funciona en México en 2025',              excerpt: 'Antes de invertir en paid ads, necesitas entender cuál es el canal de adquisición correcto para tu etapa, tu ICP y tu presupuesto.',                                 date: 'Mayo 2025',   read: '9 min' },
   { id: 10, slug: 'propuesta-comercial-que-cierra', category: 'gtm',     categoryLabel: 'Go-To-Market',    tagClass: 'tag-gtm',     colorClass: 'cv11', title: 'Cómo escribir una propuesta comercial que cierra deals',                       excerpt: 'Una propuesta comercial no es un menú de precios. Es el documento donde transformas la conversación en compromiso.',                                                 date: 'Junio 2025',  read: '6 min' },
-  { id: 11, slug: 'revenue-predecible-startup-escala', category: 'mindset', categoryLabel: 'Mindset',         tagClass: 'tag-mindset', colorClass: 'cv12', title: 'Revenue predecible: el objetivo real de cualquier startup que quiere escalar', excerpt: 'El MRR inconsistente no es una etapa temporal. Es una señal de que tu sistema comercial tiene huecos que se irán haciendo más grandes.',                           date: 'Junio 2025',  read: '7 min' }
+  { id: 11, slug: 'revenue-predecible-startup-escala', category: 'mindset', categoryLabel: 'Mindset',         tagClass: 'tag-mindset', colorClass: 'cv12', title: 'Revenue predecible: el objetivo real de cualquier startup que quiere escalar', excerpt: 'El MRR inconsistente no es una etapa temporal. Es una señal de que tu sistema comercial tiene huecos que se irán haciendo más grandes.',                           date: 'Junio 2025',  read: '7 min' },
+  { id: 12, slug: 'sales-playbook-startup', category: 'gtm', categoryLabel: 'Go-To-Market', tagClass: 'tag-gtm', colorClass: 'cv1', title: 'Sales Playbook: qué es, para qué sirve y cómo construirlo en tu startup', excerpt: 'Un Sales Playbook es el documento que hace que tus ventas dejen de depender de una sola persona. Guía paso a paso para founders en etapa early-stage.', date: 'Julio 2025', read: '9 min', isNew: true }
 ];
 
 // ── Fade-up observer ──
@@ -895,7 +896,7 @@ function renderCards(filter = 'all') {
         <span class="card-visual-num">${String(p.id + 1).padStart(2,'0')}</span>
       </div>
       <div class="card-body">
-        <div class="card-category">${p.categoryLabel}</div>
+        <div class="card-category">${p.categoryLabel}${p.isNew ? ' <span style="display:inline-flex;align-items:center;background:#F9452E;color:white;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:2px 7px;border-radius:100px;margin-left:6px;vertical-align:middle;">Nuevo</span>' : ''}</div>
         <h3 class="card-title">${p.title}</h3>
         <p class="card-excerpt">${p.excerpt}</p>
         <div class="card-footer">
