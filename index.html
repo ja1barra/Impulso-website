@@ -821,6 +821,31 @@
       color: var(--white);
       text-align: center;
       padding: 80px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner-arrows {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      will-change: transform;
+      animation: cta-arr-diag 18s linear infinite;
+    }
+    .cta-banner-arrows img {
+      position: absolute;
+      width: 186px;
+      height: 180px;
+      pointer-events: none;
+      user-select: none;
+      opacity: 0.18;
+    }
+    .cta-banner > .fade-up {
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes cta-arr-diag {
+      from { transform: translate3d(0, 0, 0); }
+      to   { transform: translate3d(860px, -920px, 0); }
     }
 
     .cta-banner h2 {
@@ -1922,7 +1947,8 @@
   </section>
 
   <!-- CTA BANNER -->
-  <section class="cta-banner">
+  <section class="cta-banner" id="cta-banner">
+    <div class="cta-banner-arrows" id="cta-arrows"></div>
     <div class="fade-up">
       <h2>Si estás listo para escalar con<br/>estructura, este es el momento.</h2>
       <p>México necesita más startups que sobrevivan y escalen. No más buenas ideas que mueren en el intento.</p>
@@ -2295,6 +2321,41 @@
         btn.disabled = false;
       }
     }
+  </script>
+
+  <script>
+    (function() {
+      const container = document.getElementById('cta-arrows');
+      const banner = document.getElementById('cta-banner');
+      if (!container || !banner) return;
+      const colW = 172, rowH = 184, ax = 103.2;
+      const loop = rowH * 5; // 920px seamless vertical period
+      function build() {
+        container.innerHTML = '';
+        const vw = banner.offsetWidth || window.innerWidth;
+        const vh = banner.offsetHeight || 300;
+        const jMin = -2, jMax = Math.ceil((vh + loop) / rowH) + 2;
+        const frag = document.createDocumentFragment();
+        for (let j = jMin; j <= jMax; j++) {
+          const y = j * rowH;
+          const baseX = j * ax;
+          const iMin = Math.floor((-200 - 920 - baseX) / colW) - 1;
+          const iMax = Math.ceil((vw + 200 - baseX) / colW) + 1;
+          for (let i = iMin; i <= iMax; i++) {
+            const img = document.createElement('img');
+            img.src = 'arrow-bg.png';
+            img.alt = '';
+            img.draggable = false;
+            img.style.left = (baseX + i * colW) + 'px';
+            img.style.top = y + 'px';
+            frag.appendChild(img);
+          }
+        }
+        container.appendChild(frag);
+      }
+      build();
+      window.addEventListener('resize', build);
+    })();
   </script>
 </body>
 </html>
