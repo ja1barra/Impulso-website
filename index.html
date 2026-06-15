@@ -1445,6 +1445,32 @@
       50%      { opacity: 1; transform: scale(1.4); }
     }
 
+    @keyframes team-arrowDraw {
+      0%   { stroke-dashoffset: 100; }
+      55%  { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes team-arrowHead {
+      0%   { opacity: 0; transform: scale(0.35); }
+      48%  { opacity: 0; transform: scale(0.35); }
+      60%  { opacity: 1; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes team-arrowWrap {
+      0%   { opacity: 1; }
+      80%  { opacity: 1; }
+      95%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes team-wordmarkIn {
+      0%   { opacity: 0; transform: translateY(14px); }
+      60%  { opacity: 0; transform: translateY(14px); }
+      74%  { opacity: 1; transform: translateY(0); }
+      82%  { opacity: 1; transform: translateY(0); }
+      94%  { opacity: 0; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(0); }
+    }
+
     /* ── Breakpoint: viewport corto (ventana no maximizada, laptop 768px h, etc.) ── */
     @media (max-height: 760px) and (min-width: 901px) {
       .framework-track { height: auto; }
@@ -1879,6 +1905,18 @@
           <h3>Jay Ibarra</h3>
           <p>Director general</p>
         </div>
+      </div>
+
+      <!-- Arrow Logo Animation -->
+      <div class="team-logo-animation fade-up" style="display:flex;flex-direction:column;align-items:center;margin-top:56px;">
+        <svg viewBox="22 34 156 134" style="width:min(40vmin,200px);height:auto;overflow:visible">
+          <rect x="36" y="48" width="128" height="106" rx="26" ry="26" fill="none" stroke="#F8402A" stroke-width="16"></rect>
+          <g style="animation: team-arrowWrap 3.27s ease-in-out infinite;">
+            <path d="M62 150 L95 103 L107 117 L133 83" fill="none" stroke="#F8402A" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" style="animation: team-arrowDraw 3.27s cubic-bezier(0.34,0.85,0.4,1) infinite;"></path>
+            <polygon points="153,57 148,92 120,73" fill="#F8402A" style="opacity:0;transform-box:fill-box;transform-origin:50% 65%;animation: team-arrowHead 3.27s cubic-bezier(0.34,1.4,0.5,1) infinite;"></polygon>
+          </g>
+        </svg>
+        <img src="impulso-wordmark.png" alt="Impulso Emprendedor by integro" style="width:min(38vmin,190px);height:auto;margin-top:10px;opacity:0;animation: team-wordmarkIn 3.27s ease-out infinite;">
       </div>
     </div>
   </section>
