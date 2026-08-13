@@ -761,9 +761,10 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
+      max-width: 380px;
+      margin: 52px auto 0;
       gap: 32px;
-      margin-top: 52px;
     }
 
     .team-card {
@@ -1909,17 +1910,6 @@
       </div>
       <div class="team-grid">
         <div class="team-card fade-up" style="transition-delay:0.1s;">
-          <img
-            src="arcelia-olmos.jpg"
-            alt="Arcelia Olmos, Directora de Ventas de Impulso Emprendedor by Integro"
-            class="team-avatar"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          />
-          <div class="team-avatar-placeholder" style="display:none;">AO</div>
-          <h3>Arcelia Olmos</h3>
-          <p>Directora de ventas</p>
-        </div>
-        <div class="team-card fade-up" style="transition-delay:0.2s;">
           <img
             src="jay-ibarra.jpg"
             alt="Jay Ibarra, Director General de Impulso Emprendedor by Integro, Mexicali BC"
